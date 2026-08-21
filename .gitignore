@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data & Large Raw Files (Gigabytes)
+data/
+diabetes_subset_ecg_data/
+*.parquet
+*.csv
+*.zip
+*.tar.gz
+
+# Extra PDF / PPTX / Temp Extracted files
+*.pdf
+*.pptx
+*_extracted.txt
+~$*.docx
+*.log
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Environments
+env/
+venv/
+ENV/
+.venv

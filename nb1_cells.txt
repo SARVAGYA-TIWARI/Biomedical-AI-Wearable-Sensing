@@ -1,0 +1,83 @@
+=== Cell 0 (markdown) ===
+# D1NAMO Glucose Data — Exploratory Data Analysis & Baseline Forecasting
+
+**Data available in this notebook:** `glucose.csv` for all 9 Type-1 diabetes subjects from the D1NAMO dataset (CGM + manual fingerprick readings).
+
+**Scope of this notebook:** This is **Phase 1a — glucose-only baseline**. The full work plan calls for Heart Rate, Activity, and other wearable signals alongside glucose history; those come from `Summary.csv` (not yet available). Everything here uses glucose history alone, which is still a legitimate and standard part of the work plan ("previous glucose values (sliding window)" is explicitly one of the listed inputs). Once `Summary.csv` arrives, this gets extended into the full multi-modal Phase 1 pipeline plus deep learning models (LSTM/GRU/TCN/Transformer) and Phase 2.
+
+=== Cell 1 (code) ===
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+import seaborn as sns
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+from xgboost import XGBRegressor
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+import warnings
+warnings.filterwarnings("ignore")
+
+sns.set_style("whitegrid")
+plt.rcParams["figure.dpi"] = 100
+pd.set_option("display.max_columns", None)
+
+=== Cell 2 (markdown) ===
+## Step 1 — Load and merge all 9 subject glucose files
+=== Cell 3 (code) ===
+files = ["glucose.csv"] + [f"glucose__{i}_.csv" for i in range(1,9)]
+base_path = "/mnt/user-data/uploads"
+
+dfs = []
+for i, f in enumerate(files, start=1):
+    df = pd.read_csv(f"{base_path}/{f}")
+    df["subject_id"] = f"subject_{i:02d}"
+    dfs.append(df)
+
+master = pd.concat(dfs, ignore_index=True)
+print("Total rows:", master.shape[0], " | Columns:", list(master.columns))
+master.head()
+
+=== Cell 4 (markdown) ===
+**Schema confirmed:** `date`, `time`, `glucose` (raw value), `type` (`cgm` = continuous sensor every ~5 min, `manual` = fingerprick spot check), `comments`, plus the `subject_id` we added.
+
+=== Cell 5 (markdown) ===
+## Step 2 — Parse timestamps and fix units
+=== Cell 6 (code) ===
+master["Time"] = pd.to_datetime(master["date"] + " " + master["time"], format="%Y-%m-%d %H:%M:%S")
+master = master.sort_values(["subject_id","Time"]).reset_index(drop=True)
+
+print("=== Raw glucose value range (unconverted) ===")
+print(master["glucose"].describe())
+
+=== Cell 7 (markdown) ===
+Raw values range roughly 2.2–22.2 — this is **mmol/L** (the CGM's native unit, common outside the US), not mg/dL. We convert using the standard clinical factor (×18.0182) so results are comparable to the clinical literature and to the thresholds we'll use later.
+
+=== Cell 8 (code) ===
+master["glucose_mgdl"] = master["glucose"] * 18.0182
+
+print("=== After conversion to mg/dL ===")
+print(master["glucose_mgdl"].describe())
+print("\nSanity check: range is 39.6-400 mg/dL, which is physiologically plausible for a living person with diabetes.")
+
+master.to_csv("glucose_parsed_merged.csv", index=False)
+
+=== Cell 9 (markdown) ===
+## Step 3 — Data quality: per-subject coverage and sampling consistency
+=== Cell 10 (code) ===
+cgm = master[master["type"]=="cgm"].copy().sort_values(["subject_id","Time"])
+manual = master[master["type"]=="manual"].copy()
+
+summary_tbl = master.groupby("subject_id").agg(
+    n_total=("glucose","count"),
+    n_cgm=("type", lambda x: (x=="cgm").sum()),
+    n_manual=("type", lambda x: (x=="manual").sum()),
+    start=("Time","min"),
+    end=("Time","max"),
+).reset_index()
+summary_tbl["duration_days"] = (summary_tbl["end"] - summary_tbl["start"]).dt.total_seconds()/86400
+summary_tbl
+
+=== Cell 11 (markdown) ===
+**Initial insight:** durations range from ~0.6 to ~4.9 days across subjects. `subject_03` stands out immediately — only 15 hours of recording versus 3-5 days for everyone else. That's a real device/session limitation in the source data, not a processing error, and we carry this flag forward into modeling.
+

@@ -1,0 +1,6 @@
+Model,Accuracy,Balanced_Accuracy,Macro_F1,Weighted_F1,Macro_AUROC,Time_Sec
+Logistic Regression,57.87,53.32,50.02,53.54,0.738,1.08
+Random Forest,58.32,54.81,53.56,56.36,0.732,7.68
+LightGBM,56.68,54.05,53.7,56.04,0.726,14.15
+XGBoost,58.93,54.85,52.62,55.74,0.737,29.32
+Neural Network (MLP),57.87,53.46,50.53,53.96,0.735,9.39

@@ -1,0 +1,41 @@
+Horizon,Feature_Set,Model,MAE,RMSE,Zone_A_pct,Zone_B_pct,Zone_C_pct,Zone_D_pct,Zone_E_pct,Clinical_Accuracy_AB,N_Test_Points
+30min,Multimodal,Naive (persistence),21.89,31.46,76.59,20.6,0.21,2.5,0.1,97.19,7931
+30min,Multimodal,Linear Regression,15.25,21.13,86.82,11.69,0.04,1.45,0.0,98.51,7931
+30min,Multimodal,Ridge Regression,15.32,21.44,86.65,11.78,0.04,1.54,0.0,98.42,7931
+30min,Multimodal,Random Forest,18.97,26.42,80.63,15.53,0.2,3.62,0.01,96.17,7931
+30min,Multimodal,XGBoost,18.22,25.25,81.31,14.61,0.04,4.03,0.0,95.93,7931
+30min,Multimodal,LightGBM,18.02,24.94,81.72,14.42,0.04,3.82,0.0,96.14,7931
+30min,Multimodal,LSTM,88.83,112.18,13.16,58.57,0.84,21.07,6.35,71.73,7931
+30min,Multimodal,GRU,100.98,124.05,11.34,50.99,3.76,10.39,23.53,62.33,7931
+30min,Multimodal,Temporal CNN,158.15,172.3,7.26,27.52,28.07,0.0,37.15,34.79,7931
+30min,Multimodal,Transformer,52.79,71.28,40.97,36.54,0.0,22.49,0.0,77.51,7931
+30min,Glucose-Only,Naive (persistence),21.89,31.46,76.59,20.6,0.21,2.5,0.1,97.19,7931
+30min,Glucose-Only,Linear Regression,15.1,21.11,86.96,11.55,0.05,1.44,0.0,98.51,7931
+30min,Glucose-Only,Ridge Regression,15.16,21.41,87.05,11.47,0.06,1.4,0.01,98.52,7931
+30min,Glucose-Only,Random Forest,18.85,26.3,80.9,15.37,0.19,3.53,0.01,96.27,7931
+30min,Glucose-Only,XGBoost,17.9,24.86,81.7,14.47,0.04,3.78,0.0,96.18,7931
+30min,Glucose-Only,LightGBM,17.83,24.76,82.2,14.13,0.04,3.63,0.0,96.33,7931
+30min,Glucose-Only,LSTM,83.64,109.88,18.23,58.62,0.0,16.56,6.59,76.85,7931
+30min,Glucose-Only,GRU,92.67,118.58,15.11,59.3,0.48,14.87,10.25,74.4,7931
+30min,Glucose-Only,Temporal CNN,159.01,173.33,7.26,27.23,28.36,0.0,37.15,34.5,7931
+30min,Glucose-Only,Transformer,43.0,58.47,50.32,36.97,0.0,12.68,0.03,87.29,7931
+60min,Multimodal,Naive (persistence),35.59,50.06,58.6,34.69,1.12,4.82,0.78,93.29,7865
+60min,Multimodal,Linear Regression,29.64,40.58,64.17,29.68,0.33,5.53,0.29,93.85,7865
+60min,Multimodal,Ridge Regression,29.75,40.81,63.94,29.89,0.27,5.59,0.31,93.83,7865
+60min,Multimodal,Random Forest,33.1,45.35,60.51,30.77,0.74,7.73,0.25,91.28,7865
+60min,Multimodal,XGBoost,32.64,44.47,59.76,31.09,0.36,8.68,0.11,90.85,7865
+60min,Multimodal,LightGBM,32.69,44.4,59.55,31.18,0.36,8.8,0.11,90.73,7865
+60min,Multimodal,LSTM,93.56,117.62,13.22,56.05,1.54,14.79,14.41,69.27,7865
+60min,Multimodal,GRU,95.85,120.79,14.18,56.5,1.77,11.37,16.19,70.68,7865
+60min,Multimodal,Temporal CNN,158.66,173.23,7.25,27.87,27.6,0.0,37.28,35.12,7865
+60min,Multimodal,Transformer,61.46,81.0,30.6,46.57,0.08,22.07,0.67,77.18,7865
+60min,Glucose-Only,Naive (persistence),35.59,50.06,58.6,34.69,1.12,4.82,0.78,93.29,7865
+60min,Glucose-Only,Linear Regression,29.2,40.48,65.42,28.86,0.33,4.97,0.42,94.28,7865
+60min,Glucose-Only,Ridge Regression,29.28,40.69,65.28,28.94,0.29,5.07,0.42,94.21,7865
+60min,Glucose-Only,Random Forest,32.59,44.77,60.86,30.88,0.81,7.16,0.28,91.75,7865
+60min,Glucose-Only,XGBoost,32.06,43.61,60.84,30.79,0.37,7.91,0.09,91.63,7865
+60min,Glucose-Only,LightGBM,31.87,43.51,60.71,30.99,0.34,7.76,0.2,91.7,7865
+60min,Glucose-Only,LSTM,87.75,113.49,18.55,51.63,0.24,13.01,16.57,70.18,7865
+60min,Glucose-Only,GRU,89.03,115.02,18.55,50.11,0.78,11.76,18.8,68.66,7865
+60min,Glucose-Only,Temporal CNN,159.78,174.76,7.25,27.62,27.86,0.0,37.28,34.86,7865
+60min,Glucose-Only,Transformer,57.53,80.16,39.69,38.02,0.2,22.09,0.0,77.71,7865

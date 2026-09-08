@@ -1,0 +1,28 @@
+Feature,Mean_Abs_SHAP_HOMAIR
+Waist Circumference (cm),0.766493
+Body Mass Index (BMI kg/m²),0.51493174
+Resting Heart Rate (BPM),0.30878398
+Race / Ethnicity,0.21879102
+Systolic Blood Pressure (mmHg),0.16457434
+Chronological Age (Years),0.12513152
+Cosinor Fit Goodness (R²),0.120479055
+Mean Daily Activity Counts,0.11247994
+Circadian Amplitude (Peak-Trough),0.11097523
+Circadian Acrophase (Peak Time h),0.10359679
+Poverty Income Ratio (SES),0.102100134
+Nightly Sleep Duration (Hours),0.08648963
+Intradaily Variability (IV - Frag),0.07797963
+Acrophase Cosine Harmonic,0.07629329
+Biological Sex,0.07629041
+L5 (5 Least Active Hours / Sleep MIMS),0.073458396
+M10 (10 Most Active Hours MIMS),0.07002697
+Circadian Mesor (Activity Baseline),0.06861595
+Diastolic Blood Pressure (mmHg),0.05954459
+Daily Sleep Wear Minutes,0.052726086
+Acrophase Sine Harmonic,0.05265062
+Relative Circadian Amplitude (RA),0.051169347
+Interdaily Stability (IS - Routine),0.045466624
+Triaxial Movement MIMS,0.04448578
+Daily Wake Wear Minutes,0.0442642
+Valid Sensor Wear Days,0.0021748391
+Max Sedentary Bout (Hours),0.0015541471

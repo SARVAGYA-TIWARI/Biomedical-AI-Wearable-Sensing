@@ -8,6 +8,7 @@ data/
 diabetes_subset_ecg_data/
 *.parquet
 *.csv
+!results/*.csv
 *.zip
 *.tar.gz
 

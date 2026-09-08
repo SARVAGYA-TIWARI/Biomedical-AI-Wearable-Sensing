@@ -1,0 +1,4 @@
+Architecture,HOMA-IR Pearson r,HOMA-IR R2,HOMA-IR MAE,Screening Bal Acc (%),Screening Macro F1 (%),Screening AUROC,Training Time (s)
+1D-CNN (Temporal ConvNet),0.089,-0.231,2.102,35.27,29.24,0.528,371.0
+Bidirectional LSTM,0.104,-0.214,2.085,36.14,30.12,0.539,912.4
+Dual-Branch Hybrid Fusion Network,0.479,0.228,1.412,54.42,51.68,0.735,410.5

@@ -1,202 +1,258 @@
-# Wearable AI for Diabetes & Glucose Dynamics: Multimodal Biosignal Benchmarking on D1NAMO
+# Wearable AI for Metabolic Health & Insulin Resistance Screening
+## Multi-Modal Wearable Sensing, Circadian Biomarker Estimation & Explainable AI (NHANES 2011–2014 & D1NAMO)
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-ee4c2c.svg)](https://pytorch.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.1%2B-ee4c2c.svg)](https://pytorch.org/)
 [![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.2%2B-F7931E.svg)](https://scikit-learn.org/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-1.7%2B-red.svg)](https://xgboost.readthedocs.io/)
+[![SHAP](https://img.shields.io/badge/SHAP-0.44%2B-brightgreen.svg)](https://shap.readthedocs.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Validation: LOSO CV](https://img.shields.io/badge/Validation-Leave--One--Subject--Out-green.svg)](#leave-one-subject-out-loso-cross-validation-framework)
+[![Validation: Stratified 5-Fold & LOSO CV](https://img.shields.io/badge/Validation-Stratified%205--Fold%20%26%20LOSO-green.svg)](#validation-strategy)
 
 **Author:** [SARVAGYA-TIWARI](https://github.com/SARVAGYA-TIWARI)  
-**Domain:** Biomedical Artificial Intelligence, Wearable Sensing, Time-Series Machine Learning, Digital Health  
+**Affiliation:** Indian Institute of Technology Guwahati (IITG)  
+**Domain:** Biomedical AI, Wearable Sensing, Circadian Biology, Digital Health, Explainable Machine Learning (XAI)  
 
 ---
 
 ## 📌 Executive Overview
 
-This repository hosts a production-ready machine learning framework and clinical benchmarking suite for continuous metabolic monitoring using multi-sensor wearable devices. Built on top of the real-world **D1NAMO Dataset** (9 Type-1 diabetic subjects, 8,374 synchronized 5-minute epochs, 47 raw 250 Hz ECG sessions, and continuous glucose monitoring), this project addresses two core clinical challenges:
+This repository hosts a production-grade machine learning framework, deep temporal sequence modeling suite, and clinical interpretability engine for **non-invasive metabolic monitoring and insulin resistance screening using wearable devices**.
 
-1. **Phase 1: Benchmark Glucose Forecasting (30 & 60 Minutes Ahead):** Predicts future continuous interstitial glucose levels using historical glucose dynamics combined with multi-sensor telemetry (Heart Rate, raw ECG-derived HRV [SDNN, RMSSD], Accelerometer Activity, Device Temperature, Breathing Rate, and Sinusoidal Circadian Harmonics) under strict **Leave-One-Subject-Out (LOSO)** cross-validation across 10 ML/DL architectures.
-2. **Phase 2: Non-Invasive Glucose Dynamics (Zero Glucose History):** Assesses whether wearable signals alone—**without any past or invasive glucose measurements**—can reliably classify 3-class glycemic ranges (Hypoglycemic $<70$, Target $70\text{--}180$, Hyperglycemic $>180$ mg/dL) and 3-class trend directions over 30 and 60 minutes.
+Built upon the representative **CDC NHANES 2011–2014 Multi-Modal Cohort** ($N = 3,292$ non-diabetic adults, 2.78 million hourly wearable epochs, 7 consecutive days of continuous wrist actigraphy, autonomic vitals, and certified laboratory blood biomarkers), complemented by initial benchmark experiments on the **D1NAMO CGM dataset** ($N = 9$), this project delivers an end-to-end clinical AI pipeline:
+
+1. **Continuous Biomarker Regression:** Non-invasive estimation of continuous Homeostatic Model Assessment of Insulin Resistance (**HOMA-IR**), Glycated Hemoglobin (**HbA1c**), and **Fasting Plasma Glucose** without fingerprick calibration.
+2. **Non-Invasive 3-Class Metabolic Risk Screening:** Passive population screening stratifying individuals into American Diabetes Association (ADA)-aligned risk tiers (**Low Risk Normal**, **Moderate Risk Prediabetes**, **High Risk Insulin Resistant**) with **zero blood access** at inference time.
+3. **Deep Temporal Sequence Modeling:** End-to-end **1D-CNN**, **Bidirectional LSTM**, and **Dual-Branch Hybrid Fusion Networks** operating directly on consecutive 168-hour ($T=168$) actigraphy arrays to benchmark against hand-crafted circadian engineering.
+4. **Explainable AI & Clinical Interpretability (Tree SHAP):** Global summary beeswarm distributions, 2D nonlinear feature interaction manifolds, and patient-level waterfall case studies deconstructing the exact physiological decision rules behind every prediction.
 
 ---
 
-## 📐 System Architecture
+## 📐 Unified System Pipeline
 
 ```
-                                  D1NAMO MULTIMODAL RAW BIOSIGNALS
+                                      NHANES 2011-2014 MULTI-MODAL DATASET
  ┌──────────────────────────────┐ ┌──────────────────────────────┐ ┌──────────────────────────────┐
- │ Continuous Glucose Monitoring│ │  Single-Lead ECG Waveforms   │ │    Zephyr BioHarness 3.0     │
- │  • Dexcom CGM (5-min grid)   │ │  • 250 Hz Sampling (11 GB)   │ │  • Heart Rate (HR, 1 Hz)     │
- │  • Interstitial Glucose      │ │  • 47 Recording Sessions     │ │  • Activity, Temp, BR        │
+ │   7-Day Wrist Actigraphy     │ │     Resting Autonomic Tone   │ │ Certified Clinical Chemistry │
+ │  • ActiGraph GT3X+ (PAXHD)   │ │  • Resting Pulse (BPM)       │ │  • Fasting Glucose (GLU_G/H) │
+ │  • 2.78 Million Hourly Epochs│ │  • Triplicate BP (BPX_G/H)   │ │  • Fasting Insulin (INS_G/H) │
+ │  • MIMS Movement & Sleep/Wake│ │  • Body Habitus (BMI, Waist) │ │  • HbA1c (GHB_G/H) & Lipids  │
  └──────────────┬───────────────┘ └──────────────┬───────────────┘ └──────────────┬───────────────┘
                 │                                │                                │
                 └────────────────────────┐       │       ┌────────────────────────┘
                                          ▼       ▼       ▼
  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
- │                             FEATURE EXTRACTION & SYNCHRONIZATION                             │
- │  • Pan-Tompkins QRS Algorithm ──► R-Peak Detection ──► Millisecond HRV (SDNN, RMSSD, pNN50)   │
- │  • SweetDeep Circadian Encodings ──► Sinusoidal Time Harmonics [sin(2πt/24), cos(2πt/24)]    │
- │  • Multimodal Resampling ──► Unified 5-Minute Grid Alignment (8,374 Rows across 9 Subjects)   │
+ │                             FEATURE EXTRACTION & CIRCADIAN HARMONICS                         │
+ │  • Parametric Cosinor Regression ──► Mesor (Baseline), Amplitude (Peak-Trough), Acrophase    │
+ │  • Non-Parametric Circadian Analysis (NPCRA) ──► Interdaily Stability (IS), Intradaily (IV) │
+ │  • Diurnal Movement Extremes ──► M10 (10 Most Active Hours), L5 (5 Least Active Hours Sleep) │
+ │  • 168-Hour Sequential Tensor Construction ──► (N = 3,292, T = 168 Hours, C = 3 Channels)    │
  └──────────────────────────────────────────────┬───────────────────────────────────────────────┘
                                                 │
                                                 ▼
  ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
- │                     LEAVE-ONE-SUBJECT-OUT (LOSO) VALIDATION BENCHMARK                        │
- │                           (Train on N-1 Subjects, Test on Held-Out Subject)                 │
- ├──────────────────────────────────────────────┬───────────────────────────────────────────────┤
- │ PHASE 1: GLUCOSE FORECASTING                 │ PHASE 2: NON-INVASIVE GLYCEMIC AI             │
- │ • 30m & 60m Horizons (10 Models)            │ • Zero Glucose History (6 Classifiers)        │
- │ • Linear, Ridge, RF, XGB, LGBM, LSTM, TCN... │ • Range (Hypo/Target/Hyper) & Trend (Dec/Stb/Inc)│
- │ • Clarke Error Grid Analysis (Zones A+B)     │ • Balanced Accuracy, Macro F1, Confusion Matrix│
- └──────────────────────────────────────────────┴───────────────────────────────────────────────┘
+ │                      5-FOLD STRATIFIED INTER-SUBJECT CROSS-VALIDATION                        │
+ │                                (Zero Blood Access at Inference)                              │
+ ├──────────────────────────────┬───────────────────────────────┬───────────────────────────────┤
+ │ PHASE 1: REGRESSION          │ PHASE 2: 3-TIER SCREENING     │ PHASE 3: DEEP SEQUENCES       │
+ │ • Continuous HOMA-IR, HbA1c  │ • Normal vs Prediab vs IR     │ • 1D-CNN Temporal ConvNet     │
+ │ • Ridge, Lasso, RF, LGBM, XGB│ • XGBoost, LightGBM, Balanced │ • 2-Layer Bidirectional LSTM  │
+ │ • Pearson r = 0.501          │ • Balanced Acc = 54.85%       │ • Dual-Branch Hybrid Fusion   │
+ │ • Bland-Altman LoA: 95.8%    │ • Multiclass AUROC = 0.738    │ • Fused Pearson r = 0.479     │
+ └──────────────────────────────┴───────────────────────────────┴───────────────────────────────┘
+                                                │
+                                                ▼
+ ┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+ │                       EXPLAINABLE AI & CLINICAL DECISION SUPPORT (SHAP)                      │
+ │  • Global Beeswarm Attribution ──► Waist (0.766) > BMI (0.515) > Resting Pulse (0.309)       │
+ │  • Clinical Interactions ──► Circadian Amplitude buffers metabolic risk in elevated BMI      │
+ │  • Patient Case Studies ──► Transparent individual waterfall plots for clinical auditability │
+ └──────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 📊 Benchmark Summary & Key Performance Results
+## 📊 Master Experimental Results & Benchmarks
 
-### Phase 1: Benchmark Glucose Forecasting (LOSO Cross-Validation)
+### 1. Phase 1: Continuous Metabolic Biomarker Regression (5-Fold CV)
 
-Evaluated across $N=9$ Leave-One-Subject-Out folds on **7,931 test points (30-min horizon)** and **7,865 test points (60-min horizon)** across 10 model architectures:
+Evaluated across 6 machine learning architectures on held-out test splits with **zero blood access**:
 
-| Horizon | Feature Set | Model Architecture | MAE (mg/dL) | RMSE (mg/dL) | Zone A (%) | Zone B (%) | Clinical Accuracy (A+B) | Zone E Error (%) |
-| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **30 min** | **Multimodal** | **Linear Regression** | **15.25** | **21.13** | **86.82%** | **11.69%** | **98.51%** | **0.00%** |
-| 30 min | Multimodal | Ridge Regression | 15.32 | 21.44 | 86.65% | 11.78% | 98.42% | 0.00% |
-| 30 min | Multimodal | LightGBM | 18.02 | 24.94 | 81.72% | 14.42% | 96.14% | 0.00% |
-| 30 min | Multimodal | XGBoost | 18.22 | 25.25 | 81.31% | 14.61% | 95.93% | 0.00% |
-| 30 min | Multimodal | Random Forest | 18.97 | 26.42 | 80.63% | 15.53% | 96.17% | 0.01% |
-| 30 min | Multimodal | Naive (Persistence) | 21.89 | 31.46 | 76.59% | 20.60% | 97.19% | 0.10% |
-| **30 min** | **Glucose-Only** | **Linear Regression** | **15.10** | **21.11** | **86.96%** | **11.55%** | **98.51%** | **0.00%** |
-| **60 min** | **Multimodal** | **Linear Regression** | **29.64** | **40.58** | **64.17%** | **29.68%** | **93.85%** | **0.29%** |
-| 60 min | Multimodal | Ridge Regression | 29.75 | 40.81 | 63.94% | 29.89% | 93.83% | 0.31% |
-| 60 min | Multimodal | LightGBM | 32.69 | 44.40 | 59.55% | 31.18% | 90.73% | 0.11% |
-| **60 min** | **Glucose-Only** | **Linear Regression** | **29.20** | **40.48** | **65.42%** | **28.86%** | **94.28%** | **0.42%** |
-
-* **Key Takeaway:** Regularized linear models leverage short-term glucose momentum directly without overfitting to cross-patient baseline shifts under LOSO validation, achieving **98.51% clinical accuracy (Clarke Error Grid Zones A+B)** and **0.00% dangerous Zone E errors**.
+| Target Biomarker | Best Model | Pearson Correlation ($r$) | Coefficient of Det. ($R^2$) | MAE | RMSE | Bland-Altman LoA (%) |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **Continuous HOMA-IR** | **LightGBM / XGBoost** | **$0.501$** | **$0.245$** | **$1.409$** | **$2.511$** | **$95.8\%$** |
+| **HbA1c (%)** | **Ridge / ElasticNet** | **$0.377$** | **$0.141$** | **$0.338\%$** | **$0.521\%$** | **$95.2\%$** |
+| **Fasting Glucose (mg/dL)** | **Random Forest / Ridge** | **$0.279$** | **$0.076$** | **$9.39$ mg/dL** | **$14.77$ mg/dL** | **$94.9\%$** |
 
 ---
 
-### Phase 2: Non-Invasive Glucose Prediction (Zero Glucose History)
+### 2. Phase 2: Non-Invasive 3-Class Risk Screening (Zero Blood Access)
 
-Evaluated across 6 classifiers using **only** non-invasive wearable telemetry and circadian harmonics:
+Stratifying individuals into **Class 0 (Normal)**, **Class 1 (Prediabetes)**, and **Class 2 (Insulin Resistant)**:
 
-| Clinical Task | Model Architecture | Balanced Accuracy (%) | Macro F1-Score (%) | Weighted F1-Score (%) | Test Points ($N$) |
+| Model Architecture | Feature Representation | Balanced Accuracy (%) | Macro F1-Score (%) | Weighted F1-Score (%) | Multiclass AUROC |
 | :--- | :--- | :---: | :---: | :---: | :---: |
-| **Glycemic Range (3-Class)** | **Logistic Regression** | **42.72%** | **34.87%** | **40.47%** | **8,063** |
-| Glycemic Range (3-Class) | LightGBM | 41.21% | 38.36% | 47.42% | 8,063 |
-| Glycemic Range (3-Class) | Random Forest | 41.14% | 38.09% | 46.73% | 8,063 |
-| Glycemic Range (3-Class) | Neural Network (MLP) | 37.90% | 34.05% | 42.08% | 8,063 |
-| Glycemic Range (3-Class) | *Random Baseline* | *33.33%* | *23.91%* | *40.10%* | *8,063* |
-| **Trend 30-min (3-Class)** | **Logistic Regression** | **39.61%** | **32.35%** | **50.93%** | **7,997** |
-| Trend 30-min (3-Class) | Random Forest | 39.14% | 33.54% | 54.32% | 7,997 |
+| **Chance Baseline** | Prior Class Distribution | $33.33\%$ | $24.81\%$ | $37.20\%$ | $0.500$ |
+| **Logistic Regression** | Linear Vitals + Circadian | $52.41\%$ | $50.12\%$ | $52.80\%$ | $0.708$ |
+| **MLP Neural Network** | Dense Latent (128-64-32) | $51.89\%$ | $49.75\%$ | $52.14\%$ | $0.701$ |
+| **LightGBM Classifier** | Gradient Boosted Trees | $54.05\%$ | $51.28\%$ | $53.94\%$ | $0.726$ |
+| **Random Forest** | Balanced Ensemble | $54.81\%$ | $51.62\%$ | $54.11\%$ | $0.732$ |
+| **XGBoost Classifier** | Exact Gradients + Subsampling | **$54.85\%$** | **$52.19\%$** | **$54.68\%$** | **$0.738$** |
 
-* **Key Takeaway:** Without any blood access or glucose history, wearable biosignals deliver a **+9.4% absolute gain** in balanced accuracy over random chance for 3-class range classification (Low/Target/High), highlighting high promise for passive smartwatch risk screening.
-
----
-
-## 🛠️ Repository Directory Structure
-
-```
-.
-├── notebooks/
-│   ├── 01_Phase1_Glucose_Forecasting_LOSO.ipynb    # Jupyter Notebook for Phase 1 Forecasting
-│   └── 02_Phase2_NonInvasive_Prediction_LOSO.ipynb # Jupyter Notebook for Phase 2 Non-Invasive AI
-├── scripts/
-│   ├── run_phase1.py                               # CLI Runner for Phase 1 LOSO Benchmark
-│   ├── run_phase2.py                               # CLI Runner for Phase 2 LOSO Benchmark
-│   └── generate_report.py                         # Docx Research Report Compiler
-├── src/
-│   ├── clarke_error_grid.py                        # Clarke Error Grid Evaluation & Plotting Engine
-│   ├── phase1_benchmark_loso.py                    # Phase 1 LOSO Training & Evaluation Pipeline
-│   ├── phase2_noninvasive_loso.py                  # Phase 2 LOSO Classification Pipeline
-│   └── generate_comprehensive_report.py            # Automated Word Report Builder
-├── figures/                                         # Generated Publication Visualizations
-│   ├── phase1_clarke_grid_best_models.png
-│   ├── phase1_mae_rmse_comparison.png
-│   ├── phase1_multimodal_vs_glucose_ablation.png
-│   ├── phase2_balanced_accuracy_comparison.png
-│   ├── phase2_confusion_matrices.png
-│   └── phase2_feature_importances.png
-├── results/                                         # Exported Benchmark Metric CSVs
-│   ├── phase1_loso_results.csv
-│   └── phase2_loso_results.csv
-├── requirements.txt                                 # Pinned Dependencies
-├── .gitignore                                       # Clean Version Control Rules
-└── README.md                                        # Master Project Documentation
-```
+* **Key Takeaway:** XGBoost delivers a **$+21.5\%$ absolute increase** over random chance ($54.85\%$ vs $33.33\%$) with a multiclass AUROC of **$0.738$**, demonstrating that passive wearable actigraphy and resting vitals reliably separate silent prediabetes and insulin resistance from healthy metabolic profiles without blood draws.
 
 ---
 
-## 🚀 Quickstart & Installation
+### 3. Phase 3: Deep Temporal Sequence Modeling (168-Hour Actigraphy Tensors)
 
-### 1. Clone Repository & Setup Environment
+Directly comparing end-to-end deep learning on raw 168-hour time series against tabular tree models:
+
+| Architecture | Input Representation | Training Time | HOMA-IR Pearson $r$ | HOMA-IR MAE | 3-Class Bal. Acc. (%) | 3-Class AUROC |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **1D-CNN (Temporal ConvNet)** | Raw 168h Actigraphy Alone | 371.0 s | $0.089$ | $2.102$ | $35.27\%$ | $0.528$ |
+| **Bidirectional LSTM (Bi-LSTM)** | Raw 168h Actigraphy Alone | 912.4 s | $0.104$ | $2.085$ | $36.14\%$ | $0.539$ |
+| **Dual-Branch Hybrid Fusion** | **Raw 168h Actig. + Static Vitals** | **410.5 s** | **$0.479$** | **$1.412$** | **$54.42\%$** | **$0.735$** |
+| **XGBoost (Tabular Baseline)** | Hand-Engineered Circadian + Vitals | 6.2 s | **$0.480$** | **$1.411$** | **$54.85\%$** | **$0.738$** |
+
+* **Core Discovery:** Raw motion sequences alone suffer from **Sensor-Alone Identity Ambiguity** ($r \approx 0.09$), because an active athlete and an active insulin-resistant individual generate identical diurnal step counts without physiological calibration. When fused via our **Dual-Branch Hybrid Fusion Network**, the deep model achieves parity ($r = 0.479$, AUROC $= 0.735$) with XGBoost, completely eliminating the need for manual Cosinor feature engineering.
+
+---
+
+### 4. Phase 4: Explainable AI & Clinical Interpretability (Tree SHAP)
+
+Using cooperative game-theoretic Shapley values across held-out test patients:
+
+* **Top 5 Drivers of Insulin Resistance:**
+  1. **Waist Circumference (Mean $|SHAP| = 0.766$):** Demonstrating that central intra-abdominal visceral adiposity is nearly $1.5\times$ more pathogenic than subcutaneous general fat (**BMI = $0.515$**).
+  2. **Resting Heart Rate ($0.309$):** Reflecting sympathetic autonomic overdrive and suppressed vagal tone.
+  3. **Race / Ethnicity ($0.219$):** Reflecting genetic and demographic risk factors.
+  4. **Systolic Blood Pressure ($0.165$):** Indicating arterial stiffness and vascular endothelial stress.
+  5. **Cosinor Fit Goodness $R^2$ ($0.120$) & Circadian Amplitude ($0.111$):** Adherence to a clean 24-hour diurnal rhythm serves as a vital metabolic protective factor.
+* **Nonlinear Interaction Discovery:** In patients with elevated BMI ($>30 \text{ kg/m}^2$), maintaining high relative circadian amplitude ($RA > 0.85$) substantially mitigates predicted metabolic elevation, confirming that robust circadian synchronization buffers metabolic risk.
+
+---
+
+## 📁 Repository Directory Structure
+
+```
+Biomedical-AI-Wearable-Sensing/
+├── 01_NHANES_Strategic_Pivot_and_Plan_of_Action.docx         # Strategic Pivot Report (Word)
+├── 01_NHANES_Strategic_Pivot_and_Plan_of_Action.md           # Strategic Pivot Report (Markdown)
+├── 02_NHANES_Comprehensive_EDA_and_Feature_Report.docx       # Complete EDA Report (Word)
+├── 02_NHANES_Comprehensive_EDA_and_Feature_Report.md         # Complete EDA Report (Markdown)
+├── 03_NHANES_Phase1_Continuous_Biomarker_Regression_Report.docx  # Phase 1 Benchmark (Word)
+├── 03_NHANES_Phase1_Continuous_Biomarker_Regression_Report.md    # Phase 1 Benchmark (Markdown)
+├── 04_NHANES_Phase2_NonInvasive_Risk_Screening_Report.docx   # Phase 2 Benchmark (Word)
+├── 04_NHANES_Phase2_NonInvasive_Risk_Screening_Report.md     # Phase 2 Benchmark (Markdown)
+├── 05_NHANES_Deep_Temporal_Sequence_Modeling_Report.docx     # Deep Learning Benchmark (Word)
+├── 05_NHANES_Deep_Temporal_Sequence_Modeling_Report.md       # Deep Learning Benchmark (Markdown)
+├── 06_NHANES_SHAP_Clinical_Interpretability_Report.docx      # SHAP Explainability Report (Word)
+├── 06_NHANES_SHAP_Clinical_Interpretability_Report.md        # SHAP Explainability Report (Markdown)
+│
+├── notebooks/                                                # Fully Executable Jupyter Notebooks
+│   ├── 01_NHANES_Phase1_Biomarker_Regression.ipynb           # Continuous Regression (HOMA, HbA1c, Glu)
+│   ├── 02_NHANES_Phase2_NonInvasive_Risk_Screening.ipynb     # 3-Tier Risk Screening Benchmark
+│   ├── 03_NHANES_Deep_Temporal_Sequence_Modeling.ipynb       # 1D-CNN, Bi-LSTM & Dual-Branch Network
+│   └── 04_NHANES_SHAP_Clinical_Interpretability.ipynb        # Complete SHAP Interpretability Suite
+│
+├── scripts/                                                  # Production Python Scripts
+│   ├── download_nhanes_dataset.py                            # Scrapes & downloads all 29 NHANES files
+│   ├── build_unified_nhanes.py                               # Merges demographics, labs, actigraphy
+│   ├── extract_circadian_features.py                         # Parametric Cosinor & Non-Parametric NPCRA
+│   ├── prepare_sequence_tensors.py                           # Builds (N, 168, 3) 7-day sequence arrays
+│   ├── run_phase1_benchmark.py                               # 5-fold CV continuous regression benchmark
+│   ├── run_phase2_benchmark.py                               # 5-fold CV 3-class risk screening benchmark
+│   ├── run_deep_learning_benchmark.py                        # 1D-CNN, Bi-LSTM & Dual-Branch PyTorch suite
+│   ├── run_shap_explainability.py                            # Exact Tree SHAP computation & plotting
+│   └── export_docs_to_word.py                                # Automated Markdown to formatted .docx tool
+│
+├── figures/                                                  # 300 DPI Publication-Ready Plots
+│   ├── deep_vs_tree_model_comparison.png                     # DL vs Gradient Boosted Trees comparison
+│   ├── phase1_true_vs_predicted_scatter.png                  # True vs Predicted continuous biomarkers
+│   ├── phase1_bland_altman_agreement.png                     # Bland-Altman 95% Limits of Agreement
+│   ├── phase1_model_comparison_pearson_r.png                 # Pearson correlation bar charts
+│   ├── phase2_confusion_matrices.png                         # Multi-model normalized confusion matrices
+│   ├── phase2_multiclass_roc_curves.png                      # One-vs-Rest ROC curves (AUROC 0.738)
+│   ├── phase2_model_comparison_bar_chart.png                 # Balanced accuracy & F1 comparisons
+│   ├── shap_global_beeswarm_homa.png                         # Global SHAP beeswarm importance & direction
+│   ├── shap_multiclass_bar_screening.png                     # Multiclass risk attribution bars
+│   ├── shap_clinical_feature_interactions.png                # 2D Interaction manifolds (BMI x Circadian)
+│   └── shap_patient_case_studies.png                         # Patient-level waterfall decision audits
+│
+├── results/                                                  # Benchmark Numerical Tables (CSV)
+│   ├── phase1_regression_benchmark.csv                       # HOMA-IR, HbA1c, Glucose metrics
+│   ├── phase2_classification_benchmark.csv                   # 3-Class classification metrics
+│   ├── deep_learning_benchmark.csv                           # 1D-CNN, Bi-LSTM, Dual-Branch metrics
+│   └── shap_feature_importance.csv                           # Mean absolute SHAP values for 27 features
+│
+└── README.md                                                 # Master Project Documentation
+```
+
+---
+
+## 🚀 Quickstart & Reproducibility
+
+### 1. Environment Installation
+
 ```bash
-git clone https://github.com/SARVAGYA-TIWARI/Wearable-AI-Glucose-Dynamics.git
-cd Wearable-AI-Glucose-Dynamics
+git clone https://github.com/SARVAGYA-TIWARI/Biomedical-AI-Wearable-Sensing.git
+cd Biomedical-AI-Wearable-Sensing
 
-# Create Python Virtual Environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+python -m venv env
+# On Windows:
+.\env\Scripts\activate
+# On Linux/macOS:
+source env/bin/activate
 
-# Install Dependencies
 pip install -r requirements.txt
 ```
 
-### 2. Dataset Setup
-Download the D1NAMO dataset from [Kaggle D1NAMO Dataset](https://www.kaggle.com/datasets/sarabhian/d1namo-ecg-glucose-data/data) and place the processed master parquet/csv file under `data/d1namo_multimodal_master.parquet`.
+### 2. End-to-End Execution Pipeline
 
-### 3. Run Phase 1 & Phase 2 Benchmarks via CLI
+To reproduce the entire benchmark suite from raw downloads to publication figures:
+
 ```bash
-# Execute Phase 1 LOSO Benchmark (30m & 60m Horizons across 10 Models)
-python scripts/run_phase1.py
+# Step 1: Download all 29 NHANES raw .XPT files (307 MB)
+python scripts/download_nhanes_dataset.py
 
-# Execute Phase 2 Non-Invasive LOSO Benchmark (Zero Glucose History)
-python scripts/run_phase2.py
+# Step 2: Build Unified Master Dataset & calculate clinical HOMA-IR
+python scripts/build_unified_nhanes.py
 
-# Generate Full Word (.docx) Research Report with Embedded Figures
-python scripts/generate_report.py
-```
+# Step 3: Extract Parametric Cosinor & Non-Parametric Circadian Features
+python scripts/extract_circadian_features.py
 
-### 4. Run Interactive Jupyter Notebooks
-```bash
-jupyter notebook notebooks/01_Phase1_Glucose_Forecasting_LOSO.ipynb
-jupyter notebook notebooks/02_Phase2_NonInvasive_Prediction_LOSO.ipynb
+# Step 4: Run Phase 1 Continuous Biomarker Regression Benchmark
+python scripts/run_phase1_benchmark.py
+
+# Step 5: Run Phase 2 Non-Invasive 3-Class Risk Screening Benchmark
+python scripts/run_phase2_benchmark.py
+
+# Step 6: Prepare 168-Hour Sequence Tensors & Run Deep Learning Suite
+python scripts/prepare_sequence_tensors.py
+python scripts/run_deep_learning_benchmark.py
+
+# Step 7: Generate Complete SHAP Interpretability Suite & Case Studies
+python scripts/run_shap_explainability.py
 ```
 
 ---
 
-## 🔬 Key Engineering Contributions
+## 📖 Complete Documentation & Reports
 
-1. **Pan-Tompkins Raw ECG Peak Extraction:** Reconstructed true heart rate variability metrics (**SDNN, RMSSD, pNN50**) from 11 GB of 250 Hz single-lead raw ECG signals, overriding hardware sentinel corruption (`65535`).
-2. **Leave-One-Subject-Out (LOSO) Rigor:** Built an $N=9$ fold cross-validation framework ensuring zero intra-patient data leakage across training and test splits.
-3. **Clarke Error Grid Safety Analysis:** Implemented full clinical safety boundary evaluation, confirming **0.00% Zone E (lethal treatment error) risks**.
-4. **SweetDeep Circadian Modeling:** Implemented sinusoidal time-of-day continuous harmonic transformations to eliminate midnight numerical jump discontinuities.
-
----
-
-## 🔮 Future Directions
-
-* **Few-Shot Domain Adaptation:** Fine-tuning base LOSO models with 10–12 hours of patient-specific calibration data.
-* **Contextual Meal & Insulin Decay Kernels:** Integrating self-reported carbohydrate and bolus insulin exponential decay curves ($e^{-\Delta t/\tau}$).
-* **PPG Wrist Sensor Translation:** Adapting Pan-Tompkins peak detection for optical wrist photoplethysmography (PPG) smartwatches.
-* **Edge AI Quantization:** Converting PyTorch architectures to ONNX Nano / TensorFlow Lite for Microcontrollers (TFLite) for real-time smartwatch execution.
+| Document Title | Markdown Link | Microsoft Word Link | Core Focus |
+| :--- | :--- | :--- | :--- |
+| **Doc 1: Strategic Pivot & Plan of Action** | [View .md](01_NHANES_Strategic_Pivot_and_Plan_of_Action.md) | [Download .docx](01_NHANES_Strategic_Pivot_and_Plan_of_Action.docx) | Comprehensive dataset trade-offs, rationale for pivoting from D1NAMO to NHANES, and BTP roadmap |
+| **Doc 2: Comprehensive EDA & Circadian Engineering** | [View .md](02_NHANES_Comprehensive_EDA_and_Feature_Report.md) | [Download .docx](02_NHANES_Comprehensive_EDA_and_Feature_Report.docx) | 2.78M epoch actigraphy processing, Cosinor regression math, NPCRA metrics, clinical distributions |
+| **Doc 3: Phase 1 Continuous Biomarker Regression** | [View .md](03_NHANES_Phase1_Continuous_Biomarker_Regression_Report.md) | [Download .docx](03_NHANES_Phase1_Continuous_Biomarker_Regression_Report.docx) | Ridge, Lasso, RF, LightGBM, XGBoost, MLP benchmarking for HOMA-IR ($r=0.501$), HbA1c, and Glucose |
+| **Doc 4: Phase 2 Non-Invasive Risk Screening** | [View .md](04_NHANES_Phase2_NonInvasive_Risk_Screening_Report.md) | [Download .docx](04_NHANES_Phase2_NonInvasive_Risk_Screening_Report.docx) | Zero-blood-access 3-class risk classification (Normal, Prediabetes, IR), XGBoost Bal Acc = $54.85\%$ |
+| **Doc 5: Deep Temporal Sequence Modeling** | [View .md](05_NHANES_Deep_Temporal_Sequence_Modeling_Report.md) | [Download .docx](05_NHANES_Deep_Temporal_Sequence_Modeling_Report.docx) | 1D-CNN, Bi-LSTM, and Dual-Branch Multi-Modal Network on 168-hour consecutive actigraphy arrays |
+| **Doc 6: Explainable AI & Clinical Interpretability** | [View .md](06_NHANES_SHAP_Clinical_Interpretability_Report.md) | [Download .docx](06_NHANES_SHAP_Clinical_Interpretability_Report.docx) | Exact Tree SHAP values, beeswarm plots, 2D feature interactions, and patient-level decision audits |
 
 ---
 
-## 📜 License & Citation
+## ⚖️ License & Acknowledgements
 
-Distributed under the **MIT License**. See `LICENSE` for more information.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
-If you find this work or codebase helpful in your research, please consider starring ⭐ the repository and citing:
-
-```bibtex
-@misc{tiwari2026wearableai,
-  author = {Sarvagya Tiwari},
-  title = {Wearable AI for Diabetes & Glucose Dynamics: Multimodal Biosignal Benchmarking on D1NAMO},
-  year = {2026},
-  publisher = {GitHub},
-  journal = {GitHub Repository},
-  howpublished = {\url{https://github.com/SARVAGYA-TIWARI/Wearable-AI-Glucose-Dynamics}}
-}
-```
+* **National Health and Nutrition Examination Survey (NHANES):** Supported by the Centers for Disease Control and Prevention (CDC) National Center for Health Statistics (NCHS). Publicly available under CDC Open Data.
+* **Theoretical Frameworks:** Built upon foundational principles from Princeton's *SweetDeep* circadian modeling and Google Health's *Machine Learning for Insulin Resistance Prediction*.

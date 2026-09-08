@@ -1,0 +1,19 @@
+Task,Model,Balanced_Accuracy,Macro_F1,Weighted_F1,N_Test_Points
+Range_Classification,Majority Baseline,33.33,23.91,40.1,8063
+Range_Classification,Logistic Regression,42.72,34.87,40.47,8063
+Range_Classification,Random Forest,41.14,38.09,46.73,8063
+Range_Classification,XGBoost,33.51,31.85,47.27,8063
+Range_Classification,LightGBM,41.21,38.36,47.42,8063
+Range_Classification,Neural Network (MLP),37.9,34.05,42.08,8063
+Trend_30min,Majority Baseline,33.33,29.52,70.39,7997
+Trend_30min,Logistic Regression,39.61,32.35,50.93,7997
+Trend_30min,Random Forest,39.14,33.54,54.32,7997
+Trend_30min,XGBoost,32.75,29.24,69.72,7997
+Trend_30min,LightGBM,38.35,33.9,56.11,7997
+Trend_30min,Neural Network (MLP),38.47,31.91,51.26,7997
+Trend_60min,Majority Baseline,33.33,30.47,76.96,7931
+Trend_60min,Logistic Regression,38.16,30.0,53.28,7931
+Trend_60min,Random Forest,35.43,30.48,57.36,7931
+Trend_60min,XGBoost,33.02,30.4,76.53,7931
+Trend_60min,LightGBM,34.91,31.06,59.49,7931
+Trend_60min,Neural Network (MLP),34.64,29.18,54.83,7931

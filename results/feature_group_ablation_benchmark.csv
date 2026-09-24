@@ -1,0 +1,9 @@
+Feature_Group,Num_Features,R2_Score,Pearson_r,MAE
+"1. Anthropometrics Only (Waist, BMI)",2,0.2129,0.4651,1.7137
+"2. Autonomic Vitals Only (Resting HR, SBP, DBP)",3,0.0361,0.2038,2.0286
+"3. Actigraphy Physical Activity Only (MIMS, Wake, Sleep)",5,0.0009,0.1147,2.0912
+"4. Circadian Dynamics Only (Cosinor, IS, IV, M10, L5)",13,0.0048,0.1449,2.0778
+"5. Demographics Only (Age, Sex, Ethnicity, SES)",4,0.0008,0.1251,2.0853
+6. Wearables + Circadian Combined (Groups 3 + 4),18,0.0077,0.1516,2.0703
+7. Vitals + Anthropometrics (Groups 1 + 2),5,0.2267,0.478,1.6818
+8. Full Multi-Modal (All 27 Features),27,0.2519,0.5022,1.6482

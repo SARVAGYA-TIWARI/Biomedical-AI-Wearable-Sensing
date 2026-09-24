@@ -1,0 +1,28 @@
+Feature_Col,Feature_Name,Single_R2,Single_R2_Std,Single_Pearson_r,Single_MAE,Rank
+waist_circ_cm,Waist Circumference (cm),0.2336,0.0041,0.4832,1.7098,1
+bmi,Body Mass Index (BMI),0.2121,0.0046,0.461,1.7005,2
+resting_hr_bpm,Resting Heart Rate (BPM),0.0277,0.0005,0.1689,2.0559,3
+systolic_bp,Systolic Blood Pressure (SBP),0.0237,0.0008,0.1566,2.0519,4
+circadian_amplitude,Circadian Amplitude,0.0148,0.0005,0.1256,2.0743,5
+diastolic_bp,Diastolic Blood Pressure (DBP),0.0137,0.0002,0.123,2.072,6
+m10_value,M10 Active Hours MIMS,0.0131,0.0009,0.1207,2.0727,7
+mean_daily_triaxial_mims,Triaxial Movement MIMS,0.0092,0.0009,0.1045,2.0745,8
+circadian_mesor,Circadian Mesor,0.009,0.0009,0.1036,2.075,9
+relative_amplitude_RA,Relative Circadian Amplitude (RA),0.0058,0.0004,0.0831,2.0854,10
+ethnicity,Race / Ethnicity,0.0043,0.0013,0.0781,2.0865,11
+poverty_ratio,Poverty Income Ratio,0.0028,0.0003,0.064,2.0838,12
+gender,Biological Sex,0.001,0.0002,0.0432,2.0921,13
+age,Age (Years),0.0008,0.0,0.0406,2.0888,14
+mean_daily_sleep_wear_min,Daily Sleep Wear Minutes,0.0001,0.0002,0.0325,2.0931,15
+interdaily_stability_IS,Interdaily Stability (IS),0.0001,0.0002,0.0323,2.0929,16
+mean_nightly_sleep_hours,Nightly Sleep Duration,0.0,0.0002,0.0319,2.0931,17
+circadian_r2,Cosinor Fit Goodness (R²),-0.0001,0.0001,0.0284,2.0936,18
+mean_daily_activity_counts,Mean Daily Activity Counts,-0.0002,0.0004,0.0387,2.0891,19
+intradaily_variability_IV,Intradaily Variability (IV),-0.0006,0.0006,0.0204,2.0933,20
+mean_daily_wake_wear_min,Daily Wake Wear Minutes,-0.0006,0.0003,0.0286,2.0906,21
+l5_value,L5 Nocturnal Sleep MIMS,-0.0006,0.0006,0.0102,2.0929,22
+acrophase_sin,Acrophase Sin,-0.0009,0.0002,-0.0051,2.0934,23
+circadian_acrophase,Circadian Acrophase,-0.0011,0.0001,-0.024,2.0927,24
+valid_wear_days,Valid Sensor Wear Days,-0.0013,0.0001,-0.0228,2.0932,25
+max_sedentary_bout_hours,Max Sedentary Bout,-0.0014,0.0001,-0.0243,2.0926,26
+acrophase_cos,Acrophase Cos,-0.0016,0.0006,-0.0324,2.093,27

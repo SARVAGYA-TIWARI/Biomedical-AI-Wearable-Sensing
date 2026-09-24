@@ -1,0 +1,7 @@
+Model_Configuration,Target_Scale,Feature_Count,R2_Score,Pearson_r,MAE
+1. Baseline LightGBM (Raw HOMA-IR),Raw HOMA-IR,27,0.2519,0.5022,1.6482
+2. LightGBM + 6 Interaction Features,Raw HOMA-IR,33,0.2528,0.5034,1.6465
+3. Stacked Ensemble (LGB+XGB+RF+Ridge),Raw HOMA-IR,33,0.2677,0.5171,1.6211
+4. LightGBM on Log-Transformed ln(HOMA-IR),ln(HOMA-IR),27,0.3913,0.6262,0.4695
+5. LightGBM + Interactions on ln(HOMA-IR),ln(HOMA-IR),33,0.3923,0.627,0.4696
+6. Stacked Ensemble on ln(HOMA-IR),ln(HOMA-IR),33,0.4044,0.6364,0.4643

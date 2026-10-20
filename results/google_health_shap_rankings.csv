@@ -1,0 +1,40 @@
+Feature,Global_Mean_Abs_SHAP,Modality
+glucose,0.8360726729778779,Routine Blood Lab
+TG_HDL_Ratio,0.4618120451077094,Routine Blood Lab
+bmi,0.3773485644467638,Anthropometrics & Vitals
+alt,0.20635239676047276,Routine Blood Lab
+weight,0.18551942981828404,Anthropometrics & Vitals
+triglycerides,0.16648658920056672,Routine Blood Lab
+STEPS_Daily_mean,0.15106435771091953,Wearable Sensor
+RHR_FreeLiving_mean,0.11444091842514459,Wearable Sensor
+hba1c,0.1053293570309053,Routine Blood Lab
+crp,0.10261198214822545,Routine Blood Lab
+SLEEP_Duration_mean,0.09077182417938981,Wearable Sensor
+age,0.0685594351166615,Anthropometrics & Vitals
+ldl,0.06275745728254646,Routine Blood Lab
+hdl,0.05953166817256416,Routine Blood Lab
+STEPS_Daily_std,0.05862859371009297,Wearable Sensor
+HRV_FreeLiving_std,0.0541914323573267,Wearable Sensor
+creatinine,0.05408323757079697,Routine Blood Lab
+egfr,0.04722136701209619,Routine Blood Lab
+SLEEP_Duration_std,0.04630199335407856,Wearable Sensor
+total cholesterol,0.04581552158053517,Routine Blood Lab
+bun,0.038954461134495126,Routine Blood Lab
+RHR_FreeLiving_std,0.03854502066201915,Wearable Sensor
+SLEEP_Duration_median,0.035381972751861154,Wearable Sensor
+waist_circumference,0.035333942788596244,Anthropometrics & Vitals
+STEPS_Daily_median,0.03313025685975704,Wearable Sensor
+Pulse_Pressure,0.030604353598314767,Anthropometrics & Vitals
+WHtR,0.027742972380876564,Anthropometrics & Vitals
+ast,0.025235384770275274,Routine Blood Lab
+systolic_bp,0.024911902667470027,Anthropometrics & Vitals
+non hdl,0.023568820509396574,Routine Blood Lab
+sex_binary,0.02054191760320956,Anthropometrics & Vitals
+MAP,0.01964224359565568,Anthropometrics & Vitals
+Autonomic_Stress_Ratio,0.01864546782873163,Wearable Sensor
+HRV_FreeLiving_median,0.014596412419617722,Wearable Sensor
+RHR_FreeLiving_median,0.013226988767479731,Wearable Sensor
+HRV_FreeLiving_mean,0.011508944662007501,Wearable Sensor
+diastolic_bp,0.010645859273107475,Anthropometrics & Vitals
+chol/hdl,0.009784249646213607,Routine Blood Lab
+height,0.009335653526531922,Anthropometrics & Vitals

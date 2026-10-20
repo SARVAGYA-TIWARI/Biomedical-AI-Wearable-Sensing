@@ -1,0 +1,660 @@
+{
+  "target_statistics": {
+    "count": {
+      "impaired_ir": 587,
+      "ir": 303,
+      "is": 275
+    },
+    "min": {
+      "impaired_ir": 1.11,
+      "ir": 2.9,
+      "is": 0.27
+    },
+    "max": {
+      "impaired_ir": 2.89,
+      "ir": 14.82,
+      "is": 1.1
+    },
+    "mean": {
+      "impaired_ir": 1.846388415672913,
+      "ir": 5.118415841584158,
+      "is": 0.7864363636363637
+    },
+    "median": {
+      "impaired_ir": 1.78,
+      "ir": 4.07,
+      "is": 0.8
+    },
+    "std": {
+      "impaired_ir": 0.5063571016632665,
+      "ir": 2.6141700211254166,
+      "is": 0.1949518716234915
+    },
+    "pct": {
+      "impaired_ir": 50.39,
+      "ir": 26.01,
+      "is": 23.61
+    }
+  },
+  "fold_top10_features": {
+    "Fold_1": [
+      {
+        "Rank": 1,
+        "Feature": "glucose",
+        "Mean_Abs_SHAP": 0.8986555975555948
+      },
+      {
+        "Rank": 2,
+        "Feature": "TG_HDL_Ratio",
+        "Mean_Abs_SHAP": 0.5221790081501371
+      },
+      {
+        "Rank": 3,
+        "Feature": "bmi",
+        "Mean_Abs_SHAP": 0.3346414939410512
+      },
+      {
+        "Rank": 4,
+        "Feature": "weight",
+        "Mean_Abs_SHAP": 0.23611144605121
+      },
+      {
+        "Rank": 5,
+        "Feature": "STEPS_Daily_mean",
+        "Mean_Abs_SHAP": 0.1917785804453887
+      },
+      {
+        "Rank": 6,
+        "Feature": "alt",
+        "Mean_Abs_SHAP": 0.18643234257613156
+      },
+      {
+        "Rank": 7,
+        "Feature": "RHR_FreeLiving_mean",
+        "Mean_Abs_SHAP": 0.1527378977988383
+      },
+      {
+        "Rank": 8,
+        "Feature": "triglycerides",
+        "Mean_Abs_SHAP": 0.11908880510122073
+      },
+      {
+        "Rank": 9,
+        "Feature": "hba1c",
+        "Mean_Abs_SHAP": 0.09031936984829966
+      },
+      {
+        "Rank": 10,
+        "Feature": "STEPS_Daily_std",
+        "Mean_Abs_SHAP": 0.08951247832277387
+      }
+    ],
+    "Fold_2": [
+      {
+        "Rank": 1,
+        "Feature": "glucose",
+        "Mean_Abs_SHAP": 0.7870771675788955
+      },
+      {
+        "Rank": 2,
+        "Feature": "TG_HDL_Ratio",
+        "Mean_Abs_SHAP": 0.3692842651244026
+      },
+      {
+        "Rank": 3,
+        "Feature": "bmi",
+        "Mean_Abs_SHAP": 0.345058918191486
+      },
+      {
+        "Rank": 4,
+        "Feature": "alt",
+        "Mean_Abs_SHAP": 0.24949417292658768
+      },
+      {
+        "Rank": 5,
+        "Feature": "weight",
+        "Mean_Abs_SHAP": 0.1604522942229376
+      },
+      {
+        "Rank": 6,
+        "Feature": "hba1c",
+        "Mean_Abs_SHAP": 0.1451812213905857
+      },
+      {
+        "Rank": 7,
+        "Feature": "RHR_FreeLiving_mean",
+        "Mean_Abs_SHAP": 0.1445404135215629
+      },
+      {
+        "Rank": 8,
+        "Feature": "crp",
+        "Mean_Abs_SHAP": 0.13967800023269766
+      },
+      {
+        "Rank": 9,
+        "Feature": "triglycerides",
+        "Mean_Abs_SHAP": 0.12194236813559158
+      },
+      {
+        "Rank": 10,
+        "Feature": "STEPS_Daily_mean",
+        "Mean_Abs_SHAP": 0.1176676294240707
+      }
+    ],
+    "Fold_3": [
+      {
+        "Rank": 1,
+        "Feature": "glucose",
+        "Mean_Abs_SHAP": 0.8645006668918546
+      },
+      {
+        "Rank": 2,
+        "Feature": "TG_HDL_Ratio",
+        "Mean_Abs_SHAP": 0.623056110167173
+      },
+      {
+        "Rank": 3,
+        "Feature": "bmi",
+        "Mean_Abs_SHAP": 0.4375988660473881
+      },
+      {
+        "Rank": 4,
+        "Feature": "triglycerides",
+        "Mean_Abs_SHAP": 0.1751417661358037
+      },
+      {
+        "Rank": 5,
+        "Feature": "alt",
+        "Mean_Abs_SHAP": 0.15665561146675763
+      },
+      {
+        "Rank": 6,
+        "Feature": "weight",
+        "Mean_Abs_SHAP": 0.14942184460804359
+      },
+      {
+        "Rank": 7,
+        "Feature": "STEPS_Daily_mean",
+        "Mean_Abs_SHAP": 0.14434279604001765
+      },
+      {
+        "Rank": 8,
+        "Feature": "SLEEP_Duration_mean",
+        "Mean_Abs_SHAP": 0.12658605043524332
+      },
+      {
+        "Rank": 9,
+        "Feature": "hba1c",
+        "Mean_Abs_SHAP": 0.11461345045319708
+      },
+      {
+        "Rank": 10,
+        "Feature": "RHR_FreeLiving_mean",
+        "Mean_Abs_SHAP": 0.10968544412273455
+      }
+    ],
+    "Fold_4": [
+      {
+        "Rank": 1,
+        "Feature": "glucose",
+        "Mean_Abs_SHAP": 0.7586743203600794
+      },
+      {
+        "Rank": 2,
+        "Feature": "bmi",
+        "Mean_Abs_SHAP": 0.4087973655467271
+      },
+      {
+        "Rank": 3,
+        "Feature": "TG_HDL_Ratio",
+        "Mean_Abs_SHAP": 0.3442975564204993
+      },
+      {
+        "Rank": 4,
+        "Feature": "triglycerides",
+        "Mean_Abs_SHAP": 0.2585562413840686
+      },
+      {
+        "Rank": 5,
+        "Feature": "alt",
+        "Mean_Abs_SHAP": 0.20701184098580439
+      },
+      {
+        "Rank": 6,
+        "Feature": "weight",
+        "Mean_Abs_SHAP": 0.1836860818303945
+      },
+      {
+        "Rank": 7,
+        "Feature": "STEPS_Daily_mean",
+        "Mean_Abs_SHAP": 0.16475456017232873
+      },
+      {
+        "Rank": 8,
+        "Feature": "ldl",
+        "Mean_Abs_SHAP": 0.1040030499985808
+      },
+      {
+        "Rank": 9,
+        "Feature": "RHR_FreeLiving_mean",
+        "Mean_Abs_SHAP": 0.0904956247840394
+      },
+      {
+        "Rank": 10,
+        "Feature": "SLEEP_Duration_mean",
+        "Mean_Abs_SHAP": 0.08792730491399159
+      }
+    ],
+    "Fold_5": [
+      {
+        "Rank": 1,
+        "Feature": "glucose",
+        "Mean_Abs_SHAP": 0.8714556125029617
+      },
+      {
+        "Rank": 2,
+        "Feature": "TG_HDL_Ratio",
+        "Mean_Abs_SHAP": 0.45024328567633554
+      },
+      {
+        "Rank": 3,
+        "Feature": "bmi",
+        "Mean_Abs_SHAP": 0.3606461785071646
+      },
+      {
+        "Rank": 4,
+        "Feature": "alt",
+        "Mean_Abs_SHAP": 0.23216801584708374
+      },
+      {
+        "Rank": 5,
+        "Feature": "weight",
+        "Mean_Abs_SHAP": 0.19792548237883412
+      },
+      {
+        "Rank": 6,
+        "Feature": "triglycerides",
+        "Mean_Abs_SHAP": 0.1577037652461488
+      },
+      {
+        "Rank": 7,
+        "Feature": "crp",
+        "Mean_Abs_SHAP": 0.15157426810122027
+      },
+      {
+        "Rank": 8,
+        "Feature": "STEPS_Daily_mean",
+        "Mean_Abs_SHAP": 0.13677822247279184
+      },
+      {
+        "Rank": 9,
+        "Feature": "hba1c",
+        "Mean_Abs_SHAP": 0.10656726584445053
+      },
+      {
+        "Rank": 10,
+        "Feature": "ldl",
+        "Mean_Abs_SHAP": 0.1022005107675104
+      }
+    ]
+  },
+  "global_ranking": [
+    {
+      "Feature": "glucose",
+      "Global_Mean_Abs_SHAP": 0.8360726729778779,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "TG_HDL_Ratio",
+      "Global_Mean_Abs_SHAP": 0.4618120451077094,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "bmi",
+      "Global_Mean_Abs_SHAP": 0.3773485644467638,
+      "Modality": "Anthropometrics & Vitals"
+    },
+    {
+      "Feature": "alt",
+      "Global_Mean_Abs_SHAP": 0.20635239676047276,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "weight",
+      "Global_Mean_Abs_SHAP": 0.18551942981828404,
+      "Modality": "Anthropometrics & Vitals"
+    },
+    {
+      "Feature": "triglycerides",
+      "Global_Mean_Abs_SHAP": 0.16648658920056672,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "STEPS_Daily_mean",
+      "Global_Mean_Abs_SHAP": 0.15106435771091953,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "RHR_FreeLiving_mean",
+      "Global_Mean_Abs_SHAP": 0.11444091842514459,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "hba1c",
+      "Global_Mean_Abs_SHAP": 0.1053293570309053,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "crp",
+      "Global_Mean_Abs_SHAP": 0.10261198214822545,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "SLEEP_Duration_mean",
+      "Global_Mean_Abs_SHAP": 0.09077182417938981,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "age",
+      "Global_Mean_Abs_SHAP": 0.0685594351166615,
+      "Modality": "Anthropometrics & Vitals"
+    },
+    {
+      "Feature": "ldl",
+      "Global_Mean_Abs_SHAP": 0.06275745728254646,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "hdl",
+      "Global_Mean_Abs_SHAP": 0.05953166817256416,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "STEPS_Daily_std",
+      "Global_Mean_Abs_SHAP": 0.05862859371009297,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "HRV_FreeLiving_std",
+      "Global_Mean_Abs_SHAP": 0.0541914323573267,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "creatinine",
+      "Global_Mean_Abs_SHAP": 0.05408323757079697,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "egfr",
+      "Global_Mean_Abs_SHAP": 0.04722136701209619,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "SLEEP_Duration_std",
+      "Global_Mean_Abs_SHAP": 0.04630199335407856,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "total cholesterol",
+      "Global_Mean_Abs_SHAP": 0.04581552158053517,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "bun",
+      "Global_Mean_Abs_SHAP": 0.038954461134495126,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "RHR_FreeLiving_std",
+      "Global_Mean_Abs_SHAP": 0.03854502066201915,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "SLEEP_Duration_median",
+      "Global_Mean_Abs_SHAP": 0.035381972751861154,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "waist_circumference",
+      "Global_Mean_Abs_SHAP": 0.035333942788596244,
+      "Modality": "Anthropometrics & Vitals"
+    },
+    {
+      "Feature": "STEPS_Daily_median",
+      "Global_Mean_Abs_SHAP": 0.03313025685975704,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "Pulse_Pressure",
+      "Global_Mean_Abs_SHAP": 0.030604353598314767,
+      "Modality": "Anthropometrics & Vitals"
+    },
+    {
+      "Feature": "WHtR",
+      "Global_Mean_Abs_SHAP": 0.027742972380876564,
+      "Modality": "Anthropometrics & Vitals"
+    },
+    {
+      "Feature": "ast",
+      "Global_Mean_Abs_SHAP": 0.025235384770275274,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "systolic_bp",
+      "Global_Mean_Abs_SHAP": 0.024911902667470027,
+      "Modality": "Anthropometrics & Vitals"
+    },
+    {
+      "Feature": "non hdl",
+      "Global_Mean_Abs_SHAP": 0.023568820509396574,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "sex_binary",
+      "Global_Mean_Abs_SHAP": 0.02054191760320956,
+      "Modality": "Anthropometrics & Vitals"
+    },
+    {
+      "Feature": "MAP",
+      "Global_Mean_Abs_SHAP": 0.01964224359565568,
+      "Modality": "Anthropometrics & Vitals"
+    },
+    {
+      "Feature": "Autonomic_Stress_Ratio",
+      "Global_Mean_Abs_SHAP": 0.01864546782873163,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "HRV_FreeLiving_median",
+      "Global_Mean_Abs_SHAP": 0.014596412419617722,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "RHR_FreeLiving_median",
+      "Global_Mean_Abs_SHAP": 0.013226988767479731,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "HRV_FreeLiving_mean",
+      "Global_Mean_Abs_SHAP": 0.011508944662007501,
+      "Modality": "Wearable Sensor"
+    },
+    {
+      "Feature": "diastolic_bp",
+      "Global_Mean_Abs_SHAP": 0.010645859273107475,
+      "Modality": "Anthropometrics & Vitals"
+    },
+    {
+      "Feature": "chol/hdl",
+      "Global_Mean_Abs_SHAP": 0.009784249646213607,
+      "Modality": "Routine Blood Lab"
+    },
+    {
+      "Feature": "height",
+      "Global_Mean_Abs_SHAP": 0.009335653526531922,
+      "Modality": "Anthropometrics & Vitals"
+    }
+  ],
+  "modality_benchmark": [
+    {
+      "Modality": "Wearables Alone (PPG, HRV, Steps, Sleep)",
+      "Num_Features": 13,
+      "AUROC": 0.6651,
+      "AUPRC": 0.3981,
+      "Accuracy": 0.7416,
+      "Balanced_Acc": 0.5611,
+      "Sensitivity": 0.1848,
+      "Specificity": 0.9374,
+      "F1_Score": 0.2712
+    },
+    {
+      "Modality": "Anthropometrics & Vitals Alone",
+      "Num_Features": 11,
+      "AUROC": 0.7599,
+      "AUPRC": 0.5079,
+      "Accuracy": 0.7614,
+      "Balanced_Acc": 0.6269,
+      "Sensitivity": 0.3465,
+      "Specificity": 0.9072,
+      "F1_Score": 0.4303
+    },
+    {
+      "Modality": "Routine Blood Labs Alone",
+      "Num_Features": 15,
+      "AUROC": 0.8549,
+      "AUPRC": 0.6889,
+      "Accuracy": 0.8043,
+      "Balanced_Acc": 0.7094,
+      "Sensitivity": 0.5116,
+      "Specificity": 0.9072,
+      "F1_Score": 0.5762
+    },
+    {
+      "Modality": "Tier 1 Non-Invasive (Wearables + Anthro)",
+      "Num_Features": 24,
+      "AUROC": 0.7753,
+      "AUPRC": 0.5141,
+      "Accuracy": 0.7674,
+      "Balanced_Acc": 0.6406,
+      "Sensitivity": 0.3762,
+      "Specificity": 0.9049,
+      "F1_Score": 0.4569
+    },
+    {
+      "Modality": "Full Multimodal Fusion (All Streams)",
+      "Num_Features": 39,
+      "AUROC": 0.8765,
+      "AUPRC": 0.7384,
+      "Accuracy": 0.8318,
+      "Balanced_Acc": 0.7493,
+      "Sensitivity": 0.5776,
+      "Specificity": 0.9211,
+      "F1_Score": 0.641
+    }
+  ],
+  "modality_shap_contribution": [
+    {
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.8101862748154716,
+      "Contribution_Pct": 21.68
+    },
+    {
+      "Modality": "Routine Blood Lab",
+      "Global_Mean_Abs_SHAP": 2.245617210904677,
+      "Contribution_Pct": 60.1
+    },
+    {
+      "Modality": "Wearable Sensor",
+      "Global_Mean_Abs_SHAP": 0.6804341836884261,
+      "Contribution_Pct": 18.21
+    }
+  ],
+  "fusion_benchmark": [
+    {
+      "Ensemble_Fusion_Strategy": "1. Wearables Alone Baseline",
+      "AUROC": 0.6651,
+      "AUPRC": 0.3981,
+      "Accuracy": 0.7416,
+      "Balanced_Acc": 0.5611,
+      "Sensitivity": 0.1848,
+      "Specificity": 0.9374,
+      "F1_Score": 0.2712
+    },
+    {
+      "Ensemble_Fusion_Strategy": "2. Anthropometrics Alone Baseline",
+      "AUROC": 0.7599,
+      "AUPRC": 0.5079,
+      "Accuracy": 0.7614,
+      "Balanced_Acc": 0.6269,
+      "Sensitivity": 0.3465,
+      "Specificity": 0.9072,
+      "F1_Score": 0.4303
+    },
+    {
+      "Ensemble_Fusion_Strategy": "3. Routine Labs Alone Baseline",
+      "AUROC": 0.8549,
+      "AUPRC": 0.6889,
+      "Accuracy": 0.8043,
+      "Balanced_Acc": 0.7094,
+      "Sensitivity": 0.5116,
+      "Specificity": 0.9072,
+      "F1_Score": 0.5762
+    },
+    {
+      "Ensemble_Fusion_Strategy": "4. Majority Vote Classification (Hard Voting >= 2/3)",
+      "AUROC": 0.8557,
+      "AUPRC": 0.7043,
+      "Accuracy": 0.794,
+      "Balanced_Acc": 0.6382,
+      "Sensitivity": 0.3135,
+      "Specificity": 0.9629,
+      "F1_Score": 0.4419
+    },
+    {
+      "Ensemble_Fusion_Strategy": "5. Equal Weighted Probability Fusion (1/3 each)",
+      "AUROC": 0.8557,
+      "AUPRC": 0.7043,
+      "Accuracy": 0.8026,
+      "Balanced_Acc": 0.6451,
+      "Sensitivity": 0.3168,
+      "Specificity": 0.9733,
+      "F1_Score": 0.455
+    },
+    {
+      "Ensemble_Fusion_Strategy": "6. Performance-Weighted Fusion (W:0.29, A:0.33, L:0.37)",
+      "AUROC": 0.8605,
+      "AUPRC": 0.7138,
+      "Accuracy": 0.8069,
+      "Balanced_Acc": 0.6523,
+      "Sensitivity": 0.33,
+      "Specificity": 0.9745,
+      "F1_Score": 0.4706
+    },
+    {
+      "Ensemble_Fusion_Strategy": "7. Optimal Grid-Weighted Fusion (W:0.10, A:0.30, L:0.60)",
+      "AUROC": 0.8688,
+      "AUPRC": 0.723,
+      "Accuracy": 0.8189,
+      "Balanced_Acc": 0.7,
+      "Sensitivity": 0.4521,
+      "Specificity": 0.9478,
+      "F1_Score": 0.5649
+    },
+    {
+      "Ensemble_Fusion_Strategy": "8. Concatenated Early Fusion (Gradient Boosting)",
+      "AUROC": 0.8765,
+      "AUPRC": 0.7384,
+      "Accuracy": 0.8318,
+      "Balanced_Acc": 0.7493,
+      "Sensitivity": 0.5776,
+      "Specificity": 0.9211,
+      "F1_Score": 0.641
+    }
+  ],
+  "best_fusion_weights": {
+    "wearable": 0.1,
+    "anthro": 0.3,
+    "labs": 0.6,
+    "auroc": 0.8688
+  }
+}

@@ -1,0 +1,817 @@
+{
+  "cohort_size": 2237,
+  "target_breakdown": {
+    "high_ir_count": 742,
+    "non_ir_count": 1495,
+    "prevalence_pct": 33.17
+  },
+  "fold_top10_features": {
+    "Fold_1": [
+      {
+        "Rank": 1,
+        "Feature": "fasting_glucose",
+        "Mean_Abs_SHAP": 0.5051
+      },
+      {
+        "Rank": 2,
+        "Feature": "hba1c",
+        "Mean_Abs_SHAP": 0.5032
+      },
+      {
+        "Rank": 3,
+        "Feature": "bmi",
+        "Mean_Abs_SHAP": 0.1938
+      },
+      {
+        "Rank": 4,
+        "Feature": "TG_HDL_Ratio",
+        "Mean_Abs_SHAP": 0.1284
+      },
+      {
+        "Rank": 5,
+        "Feature": "weight",
+        "Mean_Abs_SHAP": 0.114
+      },
+      {
+        "Rank": 6,
+        "Feature": "total_cholesterol",
+        "Mean_Abs_SHAP": 0.0836
+      },
+      {
+        "Rank": 7,
+        "Feature": "sedentary_hours_daily",
+        "Mean_Abs_SHAP": 0.0784
+      },
+      {
+        "Rank": 8,
+        "Feature": "triglycerides",
+        "Mean_Abs_SHAP": 0.0771
+      },
+      {
+        "Rank": 9,
+        "Feature": "avg_act_counts",
+        "Mean_Abs_SHAP": 0.0651
+      },
+      {
+        "Rank": 10,
+        "Feature": "sleep_duration_hr",
+        "Mean_Abs_SHAP": 0.06
+      }
+    ],
+    "Fold_2": [
+      {
+        "Rank": 1,
+        "Feature": "fasting_glucose",
+        "Mean_Abs_SHAP": 0.6719
+      },
+      {
+        "Rank": 2,
+        "Feature": "hba1c",
+        "Mean_Abs_SHAP": 0.321
+      },
+      {
+        "Rank": 3,
+        "Feature": "bmi",
+        "Mean_Abs_SHAP": 0.2036
+      },
+      {
+        "Rank": 4,
+        "Feature": "TG_HDL_Ratio",
+        "Mean_Abs_SHAP": 0.1485
+      },
+      {
+        "Rank": 5,
+        "Feature": "triglycerides",
+        "Mean_Abs_SHAP": 0.1153
+      },
+      {
+        "Rank": 6,
+        "Feature": "WHtR",
+        "Mean_Abs_SHAP": 0.0872
+      },
+      {
+        "Rank": 7,
+        "Feature": "sleep_duration_hr",
+        "Mean_Abs_SHAP": 0.0691
+      },
+      {
+        "Rank": 8,
+        "Feature": "sedentary_hours_daily",
+        "Mean_Abs_SHAP": 0.063
+      },
+      {
+        "Rank": 9,
+        "Feature": "MAP",
+        "Mean_Abs_SHAP": 0.0576
+      },
+      {
+        "Rank": 10,
+        "Feature": "avg_act_counts",
+        "Mean_Abs_SHAP": 0.0551
+      }
+    ],
+    "Fold_3": [
+      {
+        "Rank": 1,
+        "Feature": "fasting_glucose",
+        "Mean_Abs_SHAP": 0.6153
+      },
+      {
+        "Rank": 2,
+        "Feature": "hba1c",
+        "Mean_Abs_SHAP": 0.4214
+      },
+      {
+        "Rank": 3,
+        "Feature": "bmi",
+        "Mean_Abs_SHAP": 0.1593
+      },
+      {
+        "Rank": 4,
+        "Feature": "triglycerides",
+        "Mean_Abs_SHAP": 0.1472
+      },
+      {
+        "Rank": 5,
+        "Feature": "TG_HDL_Ratio",
+        "Mean_Abs_SHAP": 0.138
+      },
+      {
+        "Rank": 6,
+        "Feature": "WHtR",
+        "Mean_Abs_SHAP": 0.1004
+      },
+      {
+        "Rank": 7,
+        "Feature": "hdl",
+        "Mean_Abs_SHAP": 0.1004
+      },
+      {
+        "Rank": 8,
+        "Feature": "sedentary_hours_daily",
+        "Mean_Abs_SHAP": 0.0961
+      },
+      {
+        "Rank": 9,
+        "Feature": "avg_act_counts",
+        "Mean_Abs_SHAP": 0.093
+      },
+      {
+        "Rank": 10,
+        "Feature": "waist_circumference",
+        "Mean_Abs_SHAP": 0.077
+      }
+    ],
+    "Fold_4": [
+      {
+        "Rank": 1,
+        "Feature": "fasting_glucose",
+        "Mean_Abs_SHAP": 0.5071
+      },
+      {
+        "Rank": 2,
+        "Feature": "hba1c",
+        "Mean_Abs_SHAP": 0.4917
+      },
+      {
+        "Rank": 3,
+        "Feature": "bmi",
+        "Mean_Abs_SHAP": 0.2515
+      },
+      {
+        "Rank": 4,
+        "Feature": "triglycerides",
+        "Mean_Abs_SHAP": 0.1352
+      },
+      {
+        "Rank": 5,
+        "Feature": "TG_HDL_Ratio",
+        "Mean_Abs_SHAP": 0.1142
+      },
+      {
+        "Rank": 6,
+        "Feature": "WHtR",
+        "Mean_Abs_SHAP": 0.0927
+      },
+      {
+        "Rank": 7,
+        "Feature": "sedentary_hours_daily",
+        "Mean_Abs_SHAP": 0.0922
+      },
+      {
+        "Rank": 8,
+        "Feature": "avg_act_counts",
+        "Mean_Abs_SHAP": 0.0882
+      },
+      {
+        "Rank": 9,
+        "Feature": "waist_circumference",
+        "Mean_Abs_SHAP": 0.054
+      },
+      {
+        "Rank": 10,
+        "Feature": "total_cholesterol",
+        "Mean_Abs_SHAP": 0.0507
+      }
+    ],
+    "Fold_5": [
+      {
+        "Rank": 1,
+        "Feature": "fasting_glucose",
+        "Mean_Abs_SHAP": 0.6366
+      },
+      {
+        "Rank": 2,
+        "Feature": "hba1c",
+        "Mean_Abs_SHAP": 0.455
+      },
+      {
+        "Rank": 3,
+        "Feature": "TG_HDL_Ratio",
+        "Mean_Abs_SHAP": 0.2212
+      },
+      {
+        "Rank": 4,
+        "Feature": "bmi",
+        "Mean_Abs_SHAP": 0.1811
+      },
+      {
+        "Rank": 5,
+        "Feature": "WHtR",
+        "Mean_Abs_SHAP": 0.0997
+      },
+      {
+        "Rank": 6,
+        "Feature": "waist_circumference",
+        "Mean_Abs_SHAP": 0.0795
+      },
+      {
+        "Rank": 7,
+        "Feature": "sleep_duration_hr",
+        "Mean_Abs_SHAP": 0.0646
+      },
+      {
+        "Rank": 8,
+        "Feature": "avg_act_counts",
+        "Mean_Abs_SHAP": 0.0574
+      },
+      {
+        "Rank": 9,
+        "Feature": "hdl",
+        "Mean_Abs_SHAP": 0.0559
+      },
+      {
+        "Rank": 10,
+        "Feature": "resting_hr",
+        "Mean_Abs_SHAP": 0.0558
+      }
+    ]
+  },
+  "global_shap_rankings": [
+    {
+      "Feature": "fasting_glucose",
+      "Modality": "Routine Blood Labs",
+      "Global_Mean_Abs_SHAP": 0.5872
+    },
+    {
+      "Feature": "hba1c",
+      "Modality": "Routine Blood Labs",
+      "Global_Mean_Abs_SHAP": 0.4384
+    },
+    {
+      "Feature": "bmi",
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.1978
+    },
+    {
+      "Feature": "TG_HDL_Ratio",
+      "Modality": "Routine Blood Labs",
+      "Global_Mean_Abs_SHAP": 0.1501
+    },
+    {
+      "Feature": "triglycerides",
+      "Modality": "Routine Blood Labs",
+      "Global_Mean_Abs_SHAP": 0.103
+    },
+    {
+      "Feature": "WHtR",
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.0875
+    },
+    {
+      "Feature": "sedentary_hours_daily",
+      "Modality": "Wearable Actigraphy & Sleep",
+      "Global_Mean_Abs_SHAP": 0.0766
+    },
+    {
+      "Feature": "avg_act_counts",
+      "Modality": "Wearable Actigraphy & Sleep",
+      "Global_Mean_Abs_SHAP": 0.0717
+    },
+    {
+      "Feature": "weight",
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.0619
+    },
+    {
+      "Feature": "total_cholesterol",
+      "Modality": "Routine Blood Labs",
+      "Global_Mean_Abs_SHAP": 0.0582
+    },
+    {
+      "Feature": "waist_circumference",
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.0579
+    },
+    {
+      "Feature": "hdl",
+      "Modality": "Routine Blood Labs",
+      "Global_Mean_Abs_SHAP": 0.0558
+    },
+    {
+      "Feature": "systolic_bp",
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.0534
+    },
+    {
+      "Feature": "sleep_duration_hr",
+      "Modality": "Wearable Actigraphy & Sleep",
+      "Global_Mean_Abs_SHAP": 0.0515
+    },
+    {
+      "Feature": "MAP",
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.0459
+    },
+    {
+      "Feature": "active_hours_daily",
+      "Modality": "Wearable Actigraphy & Sleep",
+      "Global_Mean_Abs_SHAP": 0.0403
+    },
+    {
+      "Feature": "Autonomic_Stress_Ratio",
+      "Modality": "Wearable Actigraphy & Sleep",
+      "Global_Mean_Abs_SHAP": 0.0376
+    },
+    {
+      "Feature": "relative_amplitude_RA",
+      "Modality": "Wearable Actigraphy & Sleep",
+      "Global_Mean_Abs_SHAP": 0.0375
+    },
+    {
+      "Feature": "ldl",
+      "Modality": "Routine Blood Labs",
+      "Global_Mean_Abs_SHAP": 0.0366
+    },
+    {
+      "Feature": "intradaily_variability_IV",
+      "Modality": "Wearable Actigraphy & Sleep",
+      "Global_Mean_Abs_SHAP": 0.0321
+    },
+    {
+      "Feature": "sleep_efficiency_pct",
+      "Modality": "Wearable Actigraphy & Sleep",
+      "Global_Mean_Abs_SHAP": 0.0319
+    },
+    {
+      "Feature": "diastolic_bp",
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.0315
+    },
+    {
+      "Feature": "resting_hr",
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.0288
+    },
+    {
+      "Feature": "age",
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.0252
+    },
+    {
+      "Feature": "l5_activity",
+      "Modality": "Wearable Actigraphy & Sleep",
+      "Global_Mean_Abs_SHAP": 0.0243
+    },
+    {
+      "Feature": "height",
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.0238
+    },
+    {
+      "Feature": "waso_min",
+      "Modality": "Wearable Actigraphy & Sleep",
+      "Global_Mean_Abs_SHAP": 0.0218
+    },
+    {
+      "Feature": "Pulse_Pressure",
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.0218
+    },
+    {
+      "Feature": "m10_activity",
+      "Modality": "Wearable Actigraphy & Sleep",
+      "Global_Mean_Abs_SHAP": 0.0186
+    },
+    {
+      "Feature": "interdaily_stability_IS",
+      "Modality": "Wearable Actigraphy & Sleep",
+      "Global_Mean_Abs_SHAP": 0.0153
+    },
+    {
+      "Feature": "sex_binary",
+      "Modality": "Anthropometrics & Vitals",
+      "Global_Mean_Abs_SHAP": 0.0118
+    }
+  ],
+  "classification_benchmark": [
+    {
+      "Modality": "1. Wearables Alone",
+      "Classifier": "Logistic Regression",
+      "AUROC": 0.6411,
+      "AUPRC": 0.4652,
+      "Accuracy": 0.6732,
+      "Balanced_Acc": 0.5464,
+      "Sensitivity": 0.1698,
+      "Specificity": 0.9231,
+      "Precision": 0.5228,
+      "F1_Score": 0.2564
+    },
+    {
+      "Modality": "1. Wearables Alone",
+      "Classifier": "Random Forest",
+      "AUROC": 0.6242,
+      "AUPRC": 0.442,
+      "Accuracy": 0.6737,
+      "Balanced_Acc": 0.5291,
+      "Sensitivity": 0.0997,
+      "Specificity": 0.9585,
+      "Precision": 0.5441,
+      "F1_Score": 0.1686
+    },
+    {
+      "Modality": "1. Wearables Alone",
+      "Classifier": "LightGBM",
+      "AUROC": 0.5942,
+      "AUPRC": 0.4135,
+      "Accuracy": 0.6683,
+      "Balanced_Acc": 0.5438,
+      "Sensitivity": 0.1739,
+      "Specificity": 0.9137,
+      "Precision": 0.5,
+      "F1_Score": 0.258
+    },
+    {
+      "Modality": "1. Wearables Alone",
+      "Classifier": "XGBoost",
+      "AUROC": 0.5995,
+      "AUPRC": 0.4182,
+      "Accuracy": 0.6629,
+      "Balanced_Acc": 0.5384,
+      "Sensitivity": 0.1685,
+      "Specificity": 0.9084,
+      "Precision": 0.4771,
+      "F1_Score": 0.249
+    },
+    {
+      "Modality": "1. Wearables Alone",
+      "Classifier": "Soft-Voting Ensemble",
+      "AUROC": 0.6162,
+      "AUPRC": 0.4343,
+      "Accuracy": 0.6714,
+      "Balanced_Acc": 0.5393,
+      "Sensitivity": 0.1469,
+      "Specificity": 0.9318,
+      "Precision": 0.5166,
+      "F1_Score": 0.2288
+    },
+    {
+      "Modality": "2. Anthropometrics Alone",
+      "Classifier": "Logistic Regression",
+      "AUROC": 0.7472,
+      "AUPRC": 0.6185,
+      "Accuracy": 0.7304,
+      "Balanced_Acc": 0.6497,
+      "Sensitivity": 0.4097,
+      "Specificity": 0.8896,
+      "Precision": 0.6482,
+      "F1_Score": 0.5021
+    },
+    {
+      "Modality": "2. Anthropometrics Alone",
+      "Classifier": "Random Forest",
+      "AUROC": 0.7329,
+      "AUPRC": 0.6055,
+      "Accuracy": 0.7233,
+      "Balanced_Acc": 0.6396,
+      "Sensitivity": 0.3908,
+      "Specificity": 0.8883,
+      "Precision": 0.6346,
+      "F1_Score": 0.4837
+    },
+    {
+      "Modality": "2. Anthropometrics Alone",
+      "Classifier": "LightGBM",
+      "AUROC": 0.7174,
+      "AUPRC": 0.5894,
+      "Accuracy": 0.7197,
+      "Balanced_Acc": 0.6365,
+      "Sensitivity": 0.3895,
+      "Specificity": 0.8836,
+      "Precision": 0.6242,
+      "F1_Score": 0.4797
+    },
+    {
+      "Modality": "2. Anthropometrics Alone",
+      "Classifier": "XGBoost",
+      "AUROC": 0.719,
+      "AUPRC": 0.589,
+      "Accuracy": 0.7184,
+      "Balanced_Acc": 0.6359,
+      "Sensitivity": 0.3908,
+      "Specificity": 0.8809,
+      "Precision": 0.6197,
+      "F1_Score": 0.4793
+    },
+    {
+      "Modality": "2. Anthropometrics Alone",
+      "Classifier": "Soft-Voting Ensemble",
+      "AUROC": 0.7317,
+      "AUPRC": 0.6042,
+      "Accuracy": 0.7251,
+      "Balanced_Acc": 0.6426,
+      "Sensitivity": 0.3976,
+      "Specificity": 0.8876,
+      "Precision": 0.6371,
+      "F1_Score": 0.4896
+    },
+    {
+      "Modality": "3. Routine Blood Labs Alone",
+      "Classifier": "Logistic Regression",
+      "AUROC": 0.8203,
+      "AUPRC": 0.6987,
+      "Accuracy": 0.7702,
+      "Balanced_Acc": 0.7127,
+      "Sensitivity": 0.5418,
+      "Specificity": 0.8836,
+      "Precision": 0.6979,
+      "F1_Score": 0.61
+    },
+    {
+      "Modality": "3. Routine Blood Labs Alone",
+      "Classifier": "Random Forest",
+      "AUROC": 0.8156,
+      "AUPRC": 0.6841,
+      "Accuracy": 0.7747,
+      "Balanced_Acc": 0.7225,
+      "Sensitivity": 0.5674,
+      "Specificity": 0.8776,
+      "Precision": 0.697,
+      "F1_Score": 0.6256
+    },
+    {
+      "Modality": "3. Routine Blood Labs Alone",
+      "Classifier": "LightGBM",
+      "AUROC": 0.8145,
+      "AUPRC": 0.6814,
+      "Accuracy": 0.7667,
+      "Balanced_Acc": 0.7138,
+      "Sensitivity": 0.5566,
+      "Specificity": 0.8709,
+      "Precision": 0.6815,
+      "F1_Score": 0.6128
+    },
+    {
+      "Modality": "3. Routine Blood Labs Alone",
+      "Classifier": "XGBoost",
+      "AUROC": 0.815,
+      "AUPRC": 0.6816,
+      "Accuracy": 0.7671,
+      "Balanced_Acc": 0.7131,
+      "Sensitivity": 0.5526,
+      "Specificity": 0.8736,
+      "Precision": 0.6845,
+      "F1_Score": 0.6115
+    },
+    {
+      "Modality": "3. Routine Blood Labs Alone",
+      "Classifier": "Soft-Voting Ensemble",
+      "AUROC": 0.8188,
+      "AUPRC": 0.692,
+      "Accuracy": 0.7684,
+      "Balanced_Acc": 0.7131,
+      "Sensitivity": 0.5485,
+      "Specificity": 0.8776,
+      "Precision": 0.6898,
+      "F1_Score": 0.6111
+    },
+    {
+      "Modality": "4. Tier 1 Non-Invasive (Zero Blood)",
+      "Classifier": "Logistic Regression",
+      "AUROC": 0.7591,
+      "AUPRC": 0.631,
+      "Accuracy": 0.7358,
+      "Balanced_Acc": 0.6611,
+      "Sensitivity": 0.4394,
+      "Specificity": 0.8829,
+      "Precision": 0.6507,
+      "F1_Score": 0.5245
+    },
+    {
+      "Modality": "4. Tier 1 Non-Invasive (Zero Blood)",
+      "Classifier": "Random Forest",
+      "AUROC": 0.7484,
+      "AUPRC": 0.6092,
+      "Accuracy": 0.7278,
+      "Balanced_Acc": 0.6432,
+      "Sensitivity": 0.3922,
+      "Specificity": 0.8943,
+      "Precision": 0.6481,
+      "F1_Score": 0.4887
+    },
+    {
+      "Modality": "4. Tier 1 Non-Invasive (Zero Blood)",
+      "Classifier": "LightGBM",
+      "AUROC": 0.7393,
+      "AUPRC": 0.599,
+      "Accuracy": 0.7278,
+      "Balanced_Acc": 0.6504,
+      "Sensitivity": 0.4205,
+      "Specificity": 0.8803,
+      "Precision": 0.6354,
+      "F1_Score": 0.5061
+    },
+    {
+      "Modality": "4. Tier 1 Non-Invasive (Zero Blood)",
+      "Classifier": "XGBoost",
+      "AUROC": 0.7376,
+      "AUPRC": 0.5989,
+      "Accuracy": 0.7251,
+      "Balanced_Acc": 0.6504,
+      "Sensitivity": 0.4286,
+      "Specificity": 0.8722,
+      "Precision": 0.6248,
+      "F1_Score": 0.5084
+    },
+    {
+      "Modality": "4. Tier 1 Non-Invasive (Zero Blood)",
+      "Classifier": "Soft-Voting Ensemble",
+      "AUROC": 0.7502,
+      "AUPRC": 0.6151,
+      "Accuracy": 0.7304,
+      "Balanced_Acc": 0.6524,
+      "Sensitivity": 0.4205,
+      "Specificity": 0.8843,
+      "Precision": 0.6433,
+      "F1_Score": 0.5086
+    },
+    {
+      "Modality": "5. Full Multimodal Fusion",
+      "Classifier": "Logistic Regression",
+      "AUROC": 0.8295,
+      "AUPRC": 0.7193,
+      "Accuracy": 0.7747,
+      "Balanced_Acc": 0.7225,
+      "Sensitivity": 0.5674,
+      "Specificity": 0.8776,
+      "Precision": 0.697,
+      "F1_Score": 0.6256
+    },
+    {
+      "Modality": "5. Full Multimodal Fusion",
+      "Classifier": "Random Forest",
+      "AUROC": 0.8258,
+      "AUPRC": 0.7111,
+      "Accuracy": 0.7778,
+      "Balanced_Acc": 0.7218,
+      "Sensitivity": 0.5553,
+      "Specificity": 0.8883,
+      "Precision": 0.7116,
+      "F1_Score": 0.6238
+    },
+    {
+      "Modality": "5. Full Multimodal Fusion",
+      "Classifier": "LightGBM",
+      "AUROC": 0.8179,
+      "AUPRC": 0.6959,
+      "Accuracy": 0.7649,
+      "Balanced_Acc": 0.7161,
+      "Sensitivity": 0.5714,
+      "Specificity": 0.8609,
+      "Precision": 0.6709,
+      "F1_Score": 0.6172
+    },
+    {
+      "Modality": "5. Full Multimodal Fusion",
+      "Classifier": "XGBoost",
+      "AUROC": 0.8229,
+      "AUPRC": 0.7046,
+      "Accuracy": 0.7756,
+      "Balanced_Acc": 0.7282,
+      "Sensitivity": 0.5876,
+      "Specificity": 0.8689,
+      "Precision": 0.6899,
+      "F1_Score": 0.6346
+    },
+    {
+      "Modality": "5. Full Multimodal Fusion",
+      "Classifier": "Soft-Voting Ensemble",
+      "AUROC": 0.8276,
+      "AUPRC": 0.7136,
+      "Accuracy": 0.7787,
+      "Balanced_Acc": 0.7286,
+      "Sensitivity": 0.5795,
+      "Specificity": 0.8776,
+      "Precision": 0.7015,
+      "F1_Score": 0.6347
+    }
+  ],
+  "fusion_benchmark": [
+    {
+      "Ensemble_Strategy": "1. Wearables Alone Baseline",
+      "AUROC": 0.6162,
+      "AUPRC": 0.4343,
+      "Accuracy": 0.6714,
+      "Balanced_Acc": 0.5393,
+      "Sensitivity": 0.1469,
+      "Specificity": 0.9318,
+      "F1_Score": 0.2288
+    },
+    {
+      "Ensemble_Strategy": "2. Anthropometrics Alone Baseline",
+      "AUROC": 0.7317,
+      "AUPRC": 0.6042,
+      "Accuracy": 0.7251,
+      "Balanced_Acc": 0.6426,
+      "Sensitivity": 0.3976,
+      "Specificity": 0.8876,
+      "F1_Score": 0.4896
+    },
+    {
+      "Ensemble_Strategy": "3. Routine Blood Labs Alone Baseline",
+      "AUROC": 0.8188,
+      "AUPRC": 0.692,
+      "Accuracy": 0.7684,
+      "Balanced_Acc": 0.7131,
+      "Sensitivity": 0.5485,
+      "Specificity": 0.8776,
+      "F1_Score": 0.6111
+    },
+    {
+      "Ensemble_Strategy": "4. Majority Vote Classification (Hard Voting >= 2/3)",
+      "AUROC": 0.8169,
+      "AUPRC": 0.703,
+      "Accuracy": 0.7483,
+      "Balanced_Acc": 0.6495,
+      "Sensitivity": 0.3558,
+      "Specificity": 0.9431,
+      "F1_Score": 0.484
+    },
+    {
+      "Ensemble_Strategy": "5. Equal Weighted Probability Fusion (1/3 each)",
+      "AUROC": 0.8169,
+      "AUPRC": 0.703,
+      "Accuracy": 0.7541,
+      "Balanced_Acc": 0.6559,
+      "Sensitivity": 0.3639,
+      "Specificity": 0.9478,
+      "F1_Score": 0.4954
+    },
+    {
+      "Ensemble_Strategy": "6. Performance-Weighted Fusion (W:0.28, A:0.34, L:0.38)",
+      "AUROC": 0.8206,
+      "AUPRC": 0.708,
+      "Accuracy": 0.7591,
+      "Balanced_Acc": 0.6667,
+      "Sensitivity": 0.3922,
+      "Specificity": 0.9411,
+      "F1_Score": 0.5192
+    },
+    {
+      "Ensemble_Strategy": "7. Optimal Grid-Weighted Fusion (W:0.05, A:0.30, L:0.65)",
+      "AUROC": 0.8282,
+      "AUPRC": 0.7145,
+      "Accuracy": 0.7756,
+      "Balanced_Acc": 0.7079,
+      "Sensitivity": 0.5067,
+      "Specificity": 0.909,
+      "F1_Score": 0.5997
+    },
+    {
+      "Ensemble_Strategy": "8. Concatenated Early Fusion (Gradient Boosting)",
+      "AUROC": 0.8276,
+      "AUPRC": 0.7136,
+      "Accuracy": 0.7787,
+      "Balanced_Acc": 0.7286,
+      "Sensitivity": 0.5795,
+      "Specificity": 0.8776,
+      "F1_Score": 0.6347
+    }
+  ],
+  "obese_subgroup": {
+    "count": 767,
+    "auroc": 0.6703,
+    "sensitivity_at_optimal_threshold": 91.96,
+    "specificity": 24.13
+  }
+}

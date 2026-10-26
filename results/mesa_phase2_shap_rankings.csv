@@ -1,0 +1,32 @@
+Feature,Modality,Global_Mean_Abs_SHAP
+fasting_glucose,Routine Blood Labs,0.5872
+hba1c,Routine Blood Labs,0.4384
+bmi,Anthropometrics & Vitals,0.1978
+TG_HDL_Ratio,Routine Blood Labs,0.1501
+triglycerides,Routine Blood Labs,0.103
+WHtR,Anthropometrics & Vitals,0.0875
+sedentary_hours_daily,Wearable Actigraphy & Sleep,0.0766
+avg_act_counts,Wearable Actigraphy & Sleep,0.0717
+weight,Anthropometrics & Vitals,0.0619
+total_cholesterol,Routine Blood Labs,0.0582
+waist_circumference,Anthropometrics & Vitals,0.0579
+hdl,Routine Blood Labs,0.0558
+systolic_bp,Anthropometrics & Vitals,0.0534
+sleep_duration_hr,Wearable Actigraphy & Sleep,0.0515
+MAP,Anthropometrics & Vitals,0.0459
+active_hours_daily,Wearable Actigraphy & Sleep,0.0403
+Autonomic_Stress_Ratio,Wearable Actigraphy & Sleep,0.0376
+relative_amplitude_RA,Wearable Actigraphy & Sleep,0.0375
+ldl,Routine Blood Labs,0.0366
+intradaily_variability_IV,Wearable Actigraphy & Sleep,0.0321
+sleep_efficiency_pct,Wearable Actigraphy & Sleep,0.0319
+diastolic_bp,Anthropometrics & Vitals,0.0315
+resting_hr,Anthropometrics & Vitals,0.0288
+age,Anthropometrics & Vitals,0.0252
+l5_activity,Wearable Actigraphy & Sleep,0.0243
+height,Anthropometrics & Vitals,0.0238
+waso_min,Wearable Actigraphy & Sleep,0.0218
+Pulse_Pressure,Anthropometrics & Vitals,0.0218
+m10_activity,Wearable Actigraphy & Sleep,0.0186
+interdaily_stability_IS,Wearable Actigraphy & Sleep,0.0153
+sex_binary,Anthropometrics & Vitals,0.0118

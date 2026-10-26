@@ -1,0 +1,4 @@
+Transfer_Protocol,Training_Cohort,Test_Cohort,Shared_Feature_Count,Regression_Log_R2,Regression_Pearson_r,Classification_AUROC,Domain_Adaptation_Drop
+1. MESA Internal 5-Fold CV (Upper Bound),"MESA (N = 2,237)","MESA (N = 2,237)",10,0.2649,0.5147,0.7465,0.00% (Baseline)
+2. Zero-Shot External Transfer (Google Health -> MESA),"Google Health (N = 1,165)","MESA (N = 2,237)",10,-554.681,0.1692,0.5,-209466.5%
+3. Zero-Shot External Transfer (CDC NHANES -> MESA),"CDC NHANES (N = 3,296)","MESA (N = 2,237)",10,0.2584,0.5218,0.7485,-2.5%

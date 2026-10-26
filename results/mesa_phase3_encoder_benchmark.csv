@@ -1,0 +1,2 @@
+Model,Regression_Log_R2,Regression_Log_Pearson_r,Regression_Log_MAE,Regression_Raw_R2,Regression_Raw_MAE,Classification_AUROC,Classification_AUPRC,Classification_Balanced_Acc
+PyTorch Dual-Task Multimodal Encoder (z in R^32),0.2536,0.5408,0.5614,0.2168,1.5258,0.7467,0.5972,0.6627

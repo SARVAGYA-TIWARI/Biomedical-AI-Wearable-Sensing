@@ -2,11 +2,10 @@ import os
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.enum.table import WD_TABLE_ALIGNMENT, WD_ALIGN_VERTICAL
-from docx.oxml import OxmlElement, parse_xml
-from docx.oxml.ns import nsdecls, qn
+from docx.oxml import parse_xml
+from docx.oxml.ns import nsdecls
 
-def create_certificate_docx():
+def create_certificate_docx(project_title="Wearable AI for Insulin Resistance Screening"):
     doc = Document()
 
     # Set page margins (1 inch all around)
@@ -28,7 +27,6 @@ def create_certificate_docx():
         )
         sectPr.append(pgBorders)
 
-    # Styles
     # Header: Indian Institute of Technology Guwahati
     p_header = doc.add_paragraph()
     p_header.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -88,7 +86,7 @@ def create_certificate_docx():
     run.font.name = "Times New Roman"
     run.font.size = Pt(12)
 
-    run_proj = p_body2.add_run("“Non-Invasive Insulin Resistance Screening Using Multimodal Wearable Sensing and Explainable AI”")
+    run_proj = p_body2.add_run(f"“{project_title}”")
     run_proj.font.name = "Times New Roman"
     run_proj.font.size = Pt(12)
     run_proj.bold = True
@@ -107,8 +105,7 @@ def create_certificate_docx():
     run.font.name = "Times New Roman"
     run.font.size = Pt(12)
 
-    # Date and Supervisor Info Table or Paragraphs
-    # In IITG certificates, Supervisor is left-aligned or bottom-left, with signature line
+    # Supervisor Info & Signature
     p_prof = doc.add_paragraph()
     p_prof.alignment = WD_ALIGN_PARAGRAPH.LEFT
     p_prof.paragraph_format.line_spacing = 1.15
@@ -149,8 +146,13 @@ def create_certificate_docx():
     r_sig.bold = True
 
     out_path = r"d:\BTP\IITG_BTP_Certificate_Sarvagya_Tiwari.docx"
-    doc.save(out_path)
-    print(f"Generated DOCX: {out_path}")
+    try:
+        doc.save(out_path)
+        print(f"Generated DOCX: {out_path} with title: {project_title}")
+    except PermissionError:
+        out_path_v2 = r"d:\BTP\IITG_BTP_Certificate_ShortTitle.docx"
+        doc.save(out_path_v2)
+        print(f"File was locked by Word. Saved to: {out_path_v2} with title: {project_title}")
 
 if __name__ == "__main__":
-    create_certificate_docx()
+    create_certificate_docx("Wearable AI for Insulin Resistance Screening")

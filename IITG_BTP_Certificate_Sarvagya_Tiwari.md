@@ -17,7 +17,7 @@
 
 This is to certify that **Mr. Sarvagya Tiwari (Roll No. 230122047)** has been working under my supervision as a Project Student in my research group since July 2025.
 
-His project, entitled **“Non-Invasive Insulin Resistance Screening Using Multimodal Wearable Sensing and Explainable AI”**, is being forwarded for submission. I hereby certify that he has satisfactorily completed all the requirements in accordance with the rules and regulations of the Institute pertaining to the conduct of such investigations.
+His project, entitled **“Wearable AI for Insulin Resistance Screening”**, is being forwarded for submission. I hereby certify that he has satisfactorily completed all the requirements in accordance with the rules and regulations of the Institute pertaining to the conduct of such investigations.
 
 To the best of my knowledge, the results presented in this project report have not been submitted elsewhere for the award of any degree.
 
@@ -41,27 +41,19 @@ To the best of my knowledge, the results presented in this project report have n
 
 ---
 
-## Recommended Project Titles (Relevant, Concise & Precise)
+## Curated List of Short, Impactful Titles
 
-### Option 1 (Recommended — Balanced, Precise, and Publication-Ready):
-> **“Non-Invasive Insulin Resistance Screening Using Multimodal Wearable Sensing and Explainable AI”**
-* **Rationale:** Clearly identifies the clinical objective (*Non-Invasive Insulin Resistance Screening*), the data modality (*Multimodal Wearable Sensing*), and the core computational methodology (*Explainable AI*). Matches IEEE/Nature Digital Medicine paper naming conventions.
-
-### Option 2 (Focus on Continuous Metabolic Health Intelligence):
-> **“Continuous Metabolic Health Intelligence: Wearable Sensing for Early Insulin Resistance Detection”**
-* **Rationale:** Emphasizes continuous passive monitoring and early preventive detection of pre-diabetes.
-
-### Option 3 (Engineering & Machine Learning Focus):
-> **“Multimodal Machine Learning Frameworks for Non-Invasive Assessment of Insulin Resistance via Consumer Wearables”**
-* **Rationale:** Highlights the multi-dataset algorithmic benchmarks, ensemble fusion, and cross-cohort transfer learning.
-
-### Option 4 (Compact & Concise):
-> **“Wearable AI for Continuous Non-Invasive Insulin Resistance Screening”**
-* **Rationale:** Extremely punchy, easy to remember, and perfectly captures the essence of the BTP.
+| Length | Title | Highlights / Style |
+| :---: | :--- | :--- |
+| **6 words** | **“Wearable AI for Insulin Resistance Screening”** | **(Recommended)** Precise, crisp, and high-impact. |
+| **5 words** | **“Wearable Insulin Resistance Screening”** | Pure, minimalist, clinical focus. |
+| **5 words** | **“Wearable AI for Metabolic Screening”** | Broader scope encompassing prediabetes & metabolic health. |
+| **6 words** | **“Non-Invasive Wearable Insulin Resistance Screening”** | Emphasizes zero-blood non-invasive modality. |
+| **5 words** | **“Continuous Wearable Metabolic Health Intelligence”** | Product and continuous sensing focus. |
 
 ---
 
 ## File Formats Generated
-* **Microsoft Word Document:** [`IITG_BTP_Certificate_Sarvagya_Tiwari.docx`](file:///d:/BTP/IITG_BTP_Certificate_Sarvagya_Tiwari.docx)
+* **Word Document (Updated Short Title):** [`IITG_BTP_Certificate_ShortTitle.docx`](file:///d:/BTP/IITG_BTP_Certificate_ShortTitle.docx)
 * **LaTeX Thesis Template:** [`IITG_BTP_Certificate_Sarvagya_Tiwari.tex`](file:///d:/BTP/IITG_BTP_Certificate_Sarvagya_Tiwari.tex)
 * **High-Resolution IITG Emblem:** [`iitg_logo.png`](file:///d:/BTP/iitg_logo.png)

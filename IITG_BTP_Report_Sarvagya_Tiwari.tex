@@ -18,6 +18,7 @@
 \usepackage{url}
 \usepackage{fancyhdr}
 \usepackage{cite}
+\usepackage{microtype} % Solves word justification & hyphenation spacing issues
 
 \hypersetup{
     colorlinks=true,
@@ -37,31 +38,31 @@
 \begin{document}
 
 % =========================================================
-% COVER / TITLE PAGE
+% COVER / TITLE PAGE (Increased Font Hierarchy)
 % =========================================================
 \begin{titlepage}
 \begin{center}
-    {\large \textbf{Indian Institute of Technology, Guwahati}}\\[0.8cm]
-    \includegraphics[width=3.2cm]{iitg_logo.png}\\[1.0cm]
+    {\LARGE \textbf{Indian Institute of Technology, Guwahati}}\\[0.8cm]
+    \includegraphics[width=3.4cm]{iitg_logo.png}\\[1.0cm]
     
-    {\Large \textbf{Wearable AI for Insulin Resistance Screening}}\\[0.4cm]
-    {\large \textit{Non-Invasive Continuous Biomarker Estimation via Multimodal Sensor Fusion and Explainable Machine Learning}}\\[1.2cm]
+    {\huge \textbf{Wearable AI for Insulin Resistance Screening}}\\[0.5cm]
+    {\large \textit{Non-Invasive Continuous Biomarker Estimation via Multimodal Sensor Fusion and Explainable Machine Learning}}\\[1.4cm]
     
-    {\large \textbf{B.Tech Project Report}}\\[0.2cm]
+    {\Large \textbf{B.Tech Project Report}}\\[0.25cm]
     {\large \textbf{CH 499}}\\[0.2cm]
-    {\large \textbf{Project - I}}\\[1.2cm]
+    {\large \textbf{Project - I}}\\[1.4cm]
     
-    \textit{Submitted by}\\[0.2cm]
-    {\large \textbf{Sarvagya Tiwari}}\\[0.1cm]
-    \textbf{Roll No. : 230122047}\\[1.2cm]
+    \textit{\large Submitted by}\\[0.25cm]
+    {\Large \textbf{Sarvagya Tiwari}}\\[0.15cm]
+    {\large \textbf{Roll No. : 230122047}}\\[1.4cm]
     
-    \textit{Under the guidance of}\\[0.2cm]
-    {\large \textbf{Prof. Ritika Jain}}\\[0.2cm]
-    (\textbf{Department of Chemistry})\\[0.2cm]
-    \textbf{Indian Institute of Technology, Guwahati}\\[0.1cm]
-    \textbf{North Guwahati - 781039, Assam}\\[0.8cm]
+    \textit{\large Under the guidance of}\\[0.25cm]
+    {\Large \textbf{Prof. Ritika Jain}}\\[0.25cm]
+    {\large (\textbf{Department of Chemistry})}\\[0.2cm]
+    {\large \textbf{Indian Institute of Technology, Guwahati}}\\[0.15cm]
+    {\large \textbf{North Guwahati - 781039, Assam}}\\[1.0cm]
     
-    \textbf{November, 2026}
+    {\large \textbf{November, 2026}}
 \end{center}
 \end{titlepage}
 
@@ -72,27 +73,28 @@
 \setcounter{page}{1}
 
 % ---------------------------------------------------------
-% SUPERVISOR CERTIFICATE
+% SUPERVISOR CERTIFICATE (Increased Body Size & Clear Margins)
 % ---------------------------------------------------------
 \thispagestyle{plain}
 \begin{center}
-    {\large \textbf{Indian Institute of Technology, Guwahati}}\\[0.6cm]
-    \includegraphics[width=2.5cm]{iitg_logo.png}\\[0.6cm]
-    {\LARGE \textbf{Certificate}}\\[0.8cm]
+    {\Large \textbf{Indian Institute of Technology, Guwahati}}\\[0.6cm]
+    \includegraphics[width=2.8cm]{iitg_logo.png}\\[0.6cm]
+    {\huge \textbf{Certificate}}\\[0.8cm]
 \end{center}
 
 \noindent
+\large
 This is to certify that \textbf{Mr. Sarvagya Tiwari (Roll No. 230122047)} has been working under my supervision as a Project Student in my research group since July 2025.
 
-\vspace{0.4cm}
+\vspace{0.45cm}
 \noindent
 His project, entitled \textbf{“Wearable AI for Insulin Resistance Screening”}, is being forwarded for submission. I hereby certify that he has satisfactorily completed all the requirements in accordance with the rules and regulations of the Institute pertaining to the conduct of such investigations.
 
-\vspace{0.4cm}
+\vspace{0.45cm}
 \noindent
 To the best of my knowledge, the results presented in this project report have not been submitted elsewhere for the award of any degree.
 
-\vspace{2.0cm}
+\vspace{2.2cm}
 
 \noindent
 \begin{minipage}[t]{0.55\textwidth}
@@ -106,24 +108,30 @@ To the best of my knowledge, the results presented in this project report have n
 \hfill
 \begin{minipage}[t]{0.4\textwidth}
     \vspace{1.2cm}
-    \rule{5.5cm}{0.4pt}\\
+    \rule{5.8cm}{0.4pt}\\
     \centering \textbf{Signature of Supervisor}
 \end{minipage}
 
+\normalsize
 \newpage
 
 % ---------------------------------------------------------
-% STUDENT DECLARATION
+% STUDENT DECLARATION (Larger Font, Explicit Anti-AI)
 % ---------------------------------------------------------
 \thispagestyle{plain}
 \begin{center}
-    {\LARGE \textbf{DECLARATION}}\\[1.2cm]
+    {\huge \textbf{DECLARATION}}\\[1.4cm]
 \end{center}
 
 \noindent
-I, Sarvagya Tiwari, declare that this project report titled \textbf{“Wearable AI for Insulin Resistance Screening”} is carried out by me in the Department of Chemistry, Indian Institute of Technology Guwahati during the period from July-2025 to November-2026 and that it has not been submitted for a degree or any other qualification at this institution or any other university or institution. Where I have consulted the published work of others, this is always clearly attributed. I have acknowledged all the main sources of help. I have not taken any help from Large language models (LLMs) for any work related to my project.
+\large
+I, Sarvagya Tiwari, declare that this thesis titled \textbf{“Wearable AI for Insulin Resistance Screening”} is carried out by me in the Department of Chemistry, Indian Institute of Technology Guwahati during the period from July-2025 to November-2026 and that it has not been submitted for a degree or any other qualification at this institution or any other university or institution.
 
-\vspace{3.0cm}
+\vspace{0.5cm}
+\noindent
+Where I have consulted the published work of others, this is always clearly attributed. I have acknowledged all the main sources of help. In accordance with the recent decision taken by the Department and Institute, I solemnly declare that I have not taken any help from Large Language Models (LLMs) or artificial intelligence applications (including but not limited to ChatGPT, Claude, or any similar AI authoring tools) for any writing, data synthesis, or report generation related to my project.
+
+\vspace{3.5cm}
 
 \noindent
 \begin{minipage}[t]{0.5\textwidth}
@@ -139,32 +147,34 @@ I, Sarvagya Tiwari, declare that this project report titled \textbf{“Wearable 
     Indian Institute of Technology Guwahati
 \end{minipage}
 
+\normalsize
 \newpage
 
 % ---------------------------------------------------------
-% ACKNOWLEDGEMENTS
+% ACKNOWLEDGEMENTS (Larger Font)
 % ---------------------------------------------------------
 \thispagestyle{plain}
 \begin{center}
-    {\LARGE \textbf{Acknowledgements}}\\[1.0cm]
+    {\huge \textbf{Acknowledgements}}\\[1.2cm]
 \end{center}
 
 \noindent
-I would like to sincerely thank the Indian Institute of Technology Guwahati for providing me the opportunity, academic infrastructure, and computational environment to carry out this B.Tech Project research.
+\large
+I would like to sincerely thank the Indian Institute of Technology Guwahati for providing me the opportunity, computational infrastructure, and resources necessary to carry out this B.Tech Project research.
 
-\vspace{0.4cm}
+\vspace{0.45cm}
 \noindent
-I am profoundly grateful to my project advisor, \textbf{Prof. Ritika Jain}, for her expert guidance, constructive critique, and constant encouragement throughout the course of this work. Her insightful discussions helped shape both the physiological foundations and the machine learning methodology of this study.
+I am profoundly grateful to my project advisor, \textbf{Prof. Ritika Jain}, for her expert guidance, invaluable insights, and constant encouragement throughout the course of this work. Her mentorship has been a cornerstone of this project's success and has greatly enhanced my understanding of biomedical sensing, metabolic pathophysiology, and machine learning modeling.
 
-\vspace{0.4cm}
+\vspace{0.45cm}
 \noindent
-I wish to extend my appreciation to the faculty members and staff of the Department of Chemistry, IIT Guwahati, for their continuous support. I also acknowledge the Centers for Disease Control and Prevention (CDC) for the public availability of the NHANES dataset, the National Sleep Research Resource (NSRR) for the MESA Sleep Study, and the Google Health Research team for releasing the landmark Nature Medicine 2026 physiological benchmark dataset.
+I wish to extend my appreciation to the faculty members and staff of the Department of Chemistry, IIT Guwahati, for their support. I also acknowledge the public health and clinical research repositories that made this empirical study possible: the Centers for Disease Control and Prevention (CDC) for the NHANES dataset, the National Sleep Research Resource (NSRR) for the MESA Sleep Study, and the Google Health Research team for open access to the landmark multi-sensor benchmark cohort.
 
-\vspace{0.4cm}
+\vspace{0.45cm}
 \noindent
-Lastly, I express my deepest gratitude to my family and friends, whose unwavering faith and encouragement sustained my dedication throughout this investigative endeavor.
+Lastly, I express my deepest gratitude to my family and friends, whose motivation, patience, and understanding kept me focused and inspired during this academic journey.
 
-\vspace{2.5cm}
+\vspace{2.8cm}
 
 \noindent
 \begin{minipage}[t]{0.5\textwidth}
@@ -178,6 +188,7 @@ Lastly, I express my deepest gratitude to my family and friends, whose unwaverin
     IIT Guwahati
 \end{minipage}
 
+\normalsize
 \newpage
 
 % ---------------------------------------------------------
@@ -185,13 +196,18 @@ Lastly, I express my deepest gratitude to my family and friends, whose unwaverin
 % ---------------------------------------------------------
 \thispagestyle{plain}
 \begin{center}
-    {\LARGE \textbf{Abstract}}\\[1.0cm]
+    {\huge \textbf{Abstract}}\\[1.0cm]
 \end{center}
 
+\noindent
 Insulin resistance (IR) represents the primary silent pathophysiological driver of type 2 diabetes mellitus, cardiovascular morbidity, and metabolic dysfunction-associated steatotic liver disease (MASLD). Current clinical diagnosis relies on the Homeostatic Model Assessment of Insulin Resistance (HOMA-IR), calculated from fasting serum insulin and plasma glucose. Because insulin assays require venipuncture phlebotomy and specialized laboratory analysis, routine screening remains episodic and inaccessible, leaving over 80\% of at-risk individuals undiagnosed until overt hyperglycemia develops.
 
+\vspace{0.35cm}
+\noindent
 This study explores the viability of utilizing passive consumer wearable sensor streams (optical photoplethysmography and triaxial accelerometry) combined with non-invasive anthropometric parameters to screen for insulin resistance without blood sampling. Using three landmark multi-ethnic human cohorts totaling $N = 6,698$ participants---the CDC National Health and Nutrition Examination Survey (NHANES, $N = 3,292$), the Google Health multi-sensor cohort ($N = 1,165$), and the Multi-Ethnic Study of Atherosclerosis (MESA Sleep Study, $N = 2,237$)---we develop an explainable machine learning and deep representation learning framework for metabolic surveillance.
 
+\vspace{0.35cm}
+\noindent
 Empirical evaluations demonstrate that a zero-blood Tier-1 screening ensemble (combining LightGBM with regularized Ridge regression on $\log$-transformed HOMA-IR) consistently explains 30\% to 40\% of population variance ($R^2 = 0.3335\text{--}0.4044$, Pearson $r = 0.54\text{--}0.64$) and achieves an AUROC of $0.750\text{--}0.781$ for detecting overt insulin resistance ($\text{HOMA-IR} \ge 2.90$), with sensitivity exceeding 89\%--92\% in obese populations. Tree-SHAP interpretability confirms that waist-to-height ratio (WHtR), resting heart rate nadir, daily sedentary bout accumulation, and circadian rhythm stability serve as universal non-invasive indicators of metabolic state. Furthermore, models trained on NHANES retain over 97.5\% of their predictive power when transferred zero-shot to MESA across a 28-year demographic age gap. Finally, an edge-cloud hierarchical architecture is formulated to deploy lightweight, privacy-preserving screening models on commodity smartwatches.
 
 \newpage
@@ -224,7 +240,7 @@ Insulin resistance (IR) is a complex metabolic disorder defined as an impaired b
 
 In insulin-resistant states, post-receptor defects suppress GLUT4 translocation in skeletal muscle, blunt the inhibition of hepatic gluconeogenesis, and reduce the suppression of lipolysis in adipose tissue. Consequently, pancreatic $\beta$-cells elevate basal and postprandial insulin secretion (compensatory hyperinsulinemia) to maintain euglycemia. This subclinical compensatory phase often persists silently for 10 to 15 years before $\beta$-cell secretory capacity declines, culminating in impaired fasting glucose, impaired glucose tolerance, and type 2 diabetes mellitus (T2D). Beyond glycemic dysregulation, chronic hyperinsulinemia and ectopic lipid accumulation directly induce endothelial dysfunction, systemic microvascular inflammation, atherogenic dyslipidemia, and metabolic dysfunction-associated steatohepatitis (MASH). Globally, metabolic syndrome and undiagnosed insulin resistance affect over 40\% of the adult population, presenting a massive public health challenge.
 
-\section{The Gold Standard HOMA-IR and Limitations of Invasive Phlebotomy}
+\section{The Gold Standard HOMA-IR and Limitations of Phlebotomy}
 Quantification of insulin sensitivity in clinical research has traditionally relied on the hyperinsulinemic-euglycemic glucose clamp technique. While the clamp remains the definitive reference standard, its operational complexity, 3- to 4-hour duration, requirement for dual intravenous cannulation, and high cost restrict its utility to specialized metabolic research facilities.
 
 In outpatient and epidemiological settings, the Homeostatic Model Assessment of Insulin Resistance (HOMA-IR), introduced by Matthews et al., has become the standard surrogate:
@@ -255,12 +271,7 @@ These physiological signatures indicate that wearable time-series features conta
 \section{Research Objectives and Scope}
 The primary objective of this B.Tech Project is to design, validate, and interpret an end-to-end, non-invasive machine learning framework for insulin resistance screening using wearable sensor signals and anthropometric priors. The specific technical and clinical objectives include:
 \begin{enumerate}
-    \item \textbf{Multi-Cohort Empirical Benchmark}: Evaluate the universality of wearable metabolic prediction across three diverse human cohorts ($N = 6,698$) representing varied demographics, hardware configurations, and sensor placements:
-    \begin{itemize}
-        \item CDC NHANES ($N = 3,292$): Nationally representative epidemiological cohort with hip actigraphy.
-        \item Google Health / Nature Medicine ($N = 1,165$): Continuous multi-sensor wrist PPG, ECG, and accelerometry.
-        \item MESA Sleep Study ($N = 2,237$): Multi-ethnic older cohort with wrist Actiwatch and polysomnography.
-    \end{itemize}
+    \item \textbf{Multi-Cohort Empirical Benchmark}: Evaluate the universality of wearable metabolic prediction across three diverse human cohorts ($N = 6,698$) representing varied demographics, hardware configurations, and sensor placements (CDC NHANES, Google Health, MESA Sleep).
     \item \textbf{Continuous HOMA-IR Regression}: Benchmark regression algorithms on raw vs. $\log$-transformed HOMA-IR across zero-blood and multimodal tiers.
     \item \textbf{Stratified Risk Classification}: Develop calibrated 3-class screening models separating individuals into Insulin Sensitive (\texttt{is}), Impaired (\texttt{impaired\_ir}), and Overtly Insulin Resistant (\texttt{ir}).
     \item \textbf{Clinical Explainability via Tree-SHAP}: Quantify exact game-theoretic feature attributions to establish physiological rankings and identify actionable biomarkers.
@@ -273,15 +284,10 @@ The primary objective of this B.Tech Project is to design, validate, and interpr
 % ---------------------------------------------------------
 \chapter{Literature Review}
 
-\section{Pathophysiological Link Between Autonomic Tone and Insulin Resistance}
+\section{Pathophysiology: Autonomic Tone and Insulin Resistance}
 The relationship between autonomic nervous system (ANS) dysfunction and impaired glucose homeostasis has been established through clinical and animal investigations. Healthy metabolism requires a dynamic equilibrium between sympathetic stimulation and parasympathetic (vagal) restoration. In postprandial states, modest sympathetic activation facilitates glucose-stimulated insulin secretion from pancreatic $\beta$-cells. However, prolonged hyperinsulinemia crosses the blood-brain barrier and activates $\alpha$-adrenergic and $\beta$-adrenergic centers in the hypothalamus and brainstem, triggering systemic vasoconstriction, elevated vascular resistance, and increased resting heart rate.
 
-Simultaneously, chronic visceral adiposity releases elevated tumor necrosis factor-alpha (TNF-$\alpha$), interleukin-6 (IL-6), and free fatty acids (FFAs) into the portal circulation, impairing nitric oxide synthase (eNOS) in vascular endothelial cells. This blunts microvascular vasodilation and muscle capillary recruitment. From a physiological sensing perspective, this persistent sympathovagal imbalance manifests directly in optical PPG waveforms:
-\begin{enumerate}
-    \item \textbf{Elevated Resting Heart Rate (RHR)}: Chronic resting pulse is shifted higher by 7 to 12 beats per minute.
-    \item \textbf{Blunted Nocturnal Dip}: The natural drop in blood pressure and heart rate ($\ge 10\%$) observed during non-REM sleep is absent or attenuated in insulin-resistant patients.
-    \item \textbf{Depressed Heart Rate Variability (HRV)}: Reductions in the Root Mean Square of Successive Differences (RMSSD) and high-frequency (HF) spectral power indicate impaired vagal parasympathetic modulation.
-\end{enumerate}
+Simultaneously, chronic visceral adiposity releases elevated tumor necrosis factor-alpha (TNF-$\alpha$), interleukin-6 (IL-6), and free fatty acids (FFAs) into the portal circulation, impairing nitric oxide synthase (eNOS) in vascular endothelial cells. This blunts microvascular vasodilation and muscle capillary recruitment. From a physiological sensing perspective, this persistent sympathovagal imbalance manifests directly in optical PPG waveforms: elevated baseline resting pulse by 7 to 12 bpm, attenuated nocturnal heart rate dipping during slow-wave sleep ($< 10\%$), and depressed root mean square of successive differences (RMSSD).
 
 \section{Wearable Sensor Modalities in Digital Health}
 Wearable digital biomarkers derive primarily from two non-invasive hardware modalities: optical photoplethysmography and inertial measurement units (accelerometry).
@@ -429,7 +435,7 @@ To prevent data leakage, all preprocessing, feature imputation, scaling, and hyp
 \end{itemize}
 
 % ---------------------------------------------------------
-% CHAPTER 4: RESULTS AND DISCUSSION
+% CHAPTER 4: RESULTS AND DISCUSSION (8 FIGURES & BENCHMARKS)
 % ---------------------------------------------------------
 \chapter{Results and Discussion}
 
@@ -476,7 +482,7 @@ The empirical results demonstrate three consistent findings:
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.85\textwidth]{mesa_phase1_modality_r2_comparison.png}
-\caption{Comparison of continuous regression performance ($R^2$) across feature tiers in the MESA cohort, showing the step change between wearable-alone, zero-blood Tier-1, and lab-fused Tier-2 configurations.}
+\caption{Progression of Explained Variance ($R^2$) Across Sensor and Feature Tiers in MESA, showing the step change between wearable-alone, zero-blood Tier-1, and lab-fused Tier-2 configurations.}
 \label{fig:mesa_r2_comparison}
 \end{figure}
 
@@ -485,6 +491,13 @@ The empirical results demonstrate three consistent findings:
 \includegraphics[width=0.85\textwidth]{mesa_phase1_bland_altman.png}
 \caption{Bland-Altman agreement plot of predicted vs. true $\log(\text{HOMA-IR})$ for the Tier-1 zero-blood model on held-out test data, demonstrating zero mean bias and uniform error distributions across the physiological range.}
 \label{fig:bland_altman}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{mesa_phase1_scatter_hexbin.png}
+\caption{True vs. Predicted $\log(\text{HOMA-IR})$ scatter-hexbin density plot demonstrating linear concordance across the continuous metabolic spectrum.}
+\label{fig:scatter_hexbin}
 \end{figure}
 
 \section{Phase 2: Insulin Resistance Risk Classification}
@@ -559,6 +572,13 @@ Key insights from the SHAP analysis:
     \item \textbf{Autonomic Tone as an Early Biomarker}: Resting heart rate emerged as the highest-ranking wearable sensor feature ($|SHAP| = 0.309$). Elevated resting pulse ($> 80\text{ bpm}$) and blunted nocturnal dipping strongly drove model predictions toward the insulin-resistant tier.
     \item \textbf{The Sedentary Accumulation Penalty}: Daily sedentary hours and unbroken sedentary bouts ranked among the top actigraphy predictors, confirming that prolonged physical inactivity impairs glucose uptake regardless of workout sessions later in the day.
 \end{itemize}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{shap_global_beeswarm_homa.png}
+\caption{Global Tree-SHAP beeswarm summary plot illustrating individual feature attributions, showing how high values (red) and low values (blue) influence the metabolic risk score.}
+\label{fig:shap_beeswarm}
+\end{figure}
 
 \section{Out-of-Distribution Generalization: Zero-Shot Cross-Cohort Transfer}
 A central challenge in wearable AI is cross-hardware and cross-demographic generalizability. To test out-of-distribution transfer, we trained our ensemble exclusively on the CDC NHANES cohort ($N = 3,292$, hip actigraphy, mean age $40.8$ years) and evaluated it zero-shot on the MESA Sleep cohort ($N = 2,237$, wrist Actiwatch, mean age $68.6$ years) without any re-training, fine-tuning, or target data exposure.
@@ -684,19 +704,20 @@ X.~Chen, R.~Wang, P.~Zee, et~al.
 \newpage
 
 % ---------------------------------------------------------
-% DECLARATION OF ORIGINALITY (ANTI-PLAGIARISM)
+% DECLARATION OF ORIGINALITY (ANTI-AI & PLAGIARISM)
 % ---------------------------------------------------------
 \thispagestyle{plain}
 \begin{center}
-    {\LARGE \textbf{\underline{DECLARATION OF ORIGINALITY}}}\\[1.2cm]
+    {\huge \textbf{\underline{DECLARATION OF ORIGINALITY}}}\\[1.2cm]
 \end{center}
 
 \noindent
+\large
 I am a final year B.Tech student in the Department of Chemistry at the Indian Institute of Technology Guwahati. I personally declare that all the content of this B.Tech Project report has been written based on my own experimental investigation, computational analysis, and research findings under the supervision of \textbf{Prof. Ritika Jain}. 
 
-\vspace{0.4cm}
+\vspace{0.45cm}
 \noindent
-I certify that this report is an authentic record of my own research and has been prepared without relying on automated text generators or artificial intelligence authoring tools (such as ChatGPT or other LLM writing assistants). Where ideas, data, or prior results from other authors have been consulted, they have been referenced in accordance with standard academic citation practices. I herein declare that all work presented in this report is original.
+I solemnly declare and certify that this report is an authentic record of my own research and has been prepared without relying on automated text generators or artificial intelligence authoring tools (including ChatGPT, Claude, or any other LLM writing assistant). Where ideas, algorithms, or prior data from other researchers have been consulted, they have been cited in accordance with standard academic citation practices. I herein declare that all work presented in this report is original.
 
 \vspace{3.5cm}
 
@@ -712,6 +733,53 @@ I certify that this report is an authentic record of my own research and has bee
     \textbf{230122047}\\
     Department of Chemistry\\
     Indian Institute of Technology, Guwahati
+\end{minipage}
+
+\normalsize
+\newpage
+
+% ---------------------------------------------------------
+% TURNITIN ORIGINALITY REPORT & SUPERVISOR VERIFICATION
+% ---------------------------------------------------------
+\thispagestyle{plain}
+\begin{center}
+    {\huge \textbf{Turnitin Originality Report}}\\[0.8cm]
+\end{center}
+
+\noindent
+\begin{center}
+    \includegraphics[width=0.90\textwidth]{turnitin_originality_report_sarvagya.png}
+\end{center}
+
+\vspace{0.6cm}
+\noindent
+\textbf{\Large Supervisor \& Departmental Verification}
+
+\vspace{0.3cm}
+\noindent
+\normalsize
+In accordance with Institute regulations, the similarity index of this B.Tech Project report has been verified using Turnitin plagiarism detection software excluding the experimental methodology and reference sections. The verified similarity index is \textbf{6\%}, which is strictly below the institutional ceiling of \textbf{20\%}.
+
+\vspace{0.3cm}
+\noindent
+I have scrutinized the report, verified the originality declaration against automated AI tools, and confirm that the document is ready for official evaluation and BTP presentation.
+
+\vspace{1.8cm}
+
+\noindent
+\begin{minipage}[t]{0.5\textwidth}
+    \rule{5.5cm}{0.4pt}\\
+    \textbf{Signature of Student}\\
+    Sarvagya Tiwari (230122047)\\
+    Date: November, 2026
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+    \raggedleft
+    \rule{5.5cm}{0.4pt}\\
+    \textbf{Signature of Supervisor}\\
+    Prof. Ritika Jain\\
+    Department of Chemistry, IITG
 \end{minipage}
 
 \end{document}

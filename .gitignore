@@ -15,6 +15,7 @@ diabetes_subset_ecg_data/
 # Extra PDF / PPTX / Temp Extracted files
 *.pdf
 *.pptx
+!IITG_BTP_Presentation_Sarvagya_Tiwari.pptx
 *_extracted.txt
 ~$*.docx
 *.log
